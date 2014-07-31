@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F2CEBE19-8D28-4AEA-B1F9-C7A5C66F181D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>stealthtracker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D28C96C7-A610-4509-B14A-A448D1B2F803</key>
+		<string>https://github.com/mathlambrecht/stealthtracker</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>stealthtracker.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D28C96C7-A610-4509-B14A-A448D1B2F803</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mathlambrecht/stealthtracker</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D28C96C7-A610-4509-B14A-A448D1B2F803</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D28C96C7-A610-4509-B14A-A448D1B2F803</string>
+			<key>IDESourceControlWCCName</key>
+			<string>stealthtracker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

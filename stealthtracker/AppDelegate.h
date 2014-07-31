@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "NavigationController.h"
-#import "NavigationBar.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) NavigationBar *navigationBar;
 @property (strong, nonatomic) NavigationController *navigationController;
 
 @end

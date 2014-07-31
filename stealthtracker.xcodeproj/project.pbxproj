@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531167D9198AF47300A229FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531167D8198AF47300A229FF /* AppModel.m */; };
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
-		533531B8198ACA570044F5F0 /* NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B7198ACA570044F5F0 /* NavigationBar.m */; };
 		53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA1198A8A88002BAA3F /* Foundation.framework */; };
 		53F38AA4198A8A88002BAA3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */; };
 		53F38AA6198A8A88002BAA3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA5198A8A88002BAA3F /* UIKit.framework */; };
@@ -36,12 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531167D7198AF47300A229FF /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
+		531167D8198AF47300A229FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		533531B0198ABF920044F5F0 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		533531B1198ABF920044F5F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		533531B3198ABFA80044F5F0 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
 		533531B4198ABFA80044F5F0 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
-		533531B6198ACA570044F5F0 /* NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBar.h; sourceTree = "<group>"; };
-		533531B7198ACA570044F5F0 /* NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBar.m; sourceTree = "<group>"; };
 		53F38A9E198A8A88002BAA3F /* stealthtracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stealthtracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F38AA1198A8A88002BAA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +171,8 @@
 		53F38AD0198A9276002BAA3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				531167D7198AF47300A229FF /* AppModel.h */,
+				531167D8198AF47300A229FF /* AppModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,8 +200,6 @@
 		53F38AD6198A95C3002BAA3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				533531B6198ACA570044F5F0 /* NavigationBar.h */,
-				533531B7198ACA570044F5F0 /* NavigationBar.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */,
-				533531B8198ACA570044F5F0 /* NavigationBar.m in Sources */,
+				531167D9198AF47300A229FF /* AppModel.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,

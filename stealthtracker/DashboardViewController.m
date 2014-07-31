@@ -20,12 +20,25 @@
     if (self)
     {
         // Custom initialization
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(btnMenuClicked:)];
+        
+        //Create navbar
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnMenu.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnMenuClicked:)];
+        [self.navigationItem.leftBarButtonItem setTintColor: [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1]];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnNewTracking.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnNewTrackingClicked:)];
+        [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
+        
+        
     }
     return self;
 }
 
 -(void)btnMenuClicked:(id)sender
+{
+    
+}
+
+-(void)btnNewTrackingClicked:(id)sender
 {
     
 }
@@ -43,6 +56,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 /*

@@ -20,9 +20,6 @@
     if (self)
     {
         // Custom initialization
-        [self.navigationBar setTranslucent:false];
-        [self.navigationBar setBarTintColor:[UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1]];
-        
         self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
         [self pushViewController:self.dashboardViewController animated:NO];
     }
@@ -34,6 +31,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //setup navigation bar appearance
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
