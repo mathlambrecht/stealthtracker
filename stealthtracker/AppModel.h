@@ -10,6 +10,10 @@
 
 @interface AppModel : NSObject
 
+@property (nonatomic, readwrite) BOOL isLoggedIn;
+@property (nonatomic, readwrite, strong) NSString *username;
+
 + (id)getInstance;
+-(void)navigateToScreen:(NSString *)screen;
 
 @end

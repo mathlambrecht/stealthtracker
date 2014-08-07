@@ -10,6 +10,18 @@
 		531167D9198AF47300A229FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531167D8198AF47300A229FF /* AppModel.m */; };
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
+		536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AE7198BB4B000FCEED0 /* LoginViewController.m */; };
+		536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AEB198BB4C500FCEED0 /* LoginView.m */; };
+		536D3AEF198BC98300FCEED0 /* Arame-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 536D3AED198BC98300FCEED0 /* Arame-Thin.otf */; };
+		536D3AF0198BC98300FCEED0 /* RODUScut300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 536D3AEE198BC98300FCEED0 /* RODUScut300.otf */; };
+		536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AF4198BCEA100FCEED0 /* HelperFactory.m */; };
+		536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AF8198BDA3D00FCEED0 /* InputTextField.m */; };
+		5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE831993994F00043984 /* NewTrackingViewController.m */; };
+		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
+		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
+		53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D771993B1B800DB1D26 /* TrackingView.m */; };
+		53E09300198BF67200D98618 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E092FF198BF67200D98618 /* Label.m */; };
+		53E09303198BF9E900D98618 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E09302198BF9E900D98618 /* Button.m */; };
 		53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA1198A8A88002BAA3F /* Foundation.framework */; };
 		53F38AA4198A8A88002BAA3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */; };
 		53F38AA6198A8A88002BAA3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA5198A8A88002BAA3F /* UIKit.framework */; };
@@ -23,6 +35,7 @@
 		53F38AC5198A8A88002BAA3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53F38AC3198A8A88002BAA3F /* InfoPlist.strings */; };
 		53F38AC7198A8A88002BAA3F /* stealthtrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F38AC6198A8A88002BAA3F /* stealthtrackerTests.m */; };
 		53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F38AD4198A94EC002BAA3F /* NavigationController.m */; };
+		F98F4C007CAE4CD3A2D8CC06 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CDB2D05EAC4932BC70D3F1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +49,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A421B7E88DF47D7A4308232 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		531167D7198AF47300A229FF /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		531167D8198AF47300A229FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
 		533531B0198ABF920044F5F0 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		533531B1198ABF920044F5F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		533531B3198ABFA80044F5F0 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
 		533531B4198ABFA80044F5F0 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
+		536D3AE6198BB4B000FCEED0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		536D3AE7198BB4B000FCEED0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		536D3AEA198BB4C500FCEED0 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		536D3AEB198BB4C500FCEED0 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		536D3AED198BC98300FCEED0 /* Arame-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Arame-Thin.otf"; path = "resources/fonts/Arame-Thin.otf"; sourceTree = "<group>"; };
+		536D3AEE198BC98300FCEED0 /* RODUScut300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = RODUScut300.otf; path = resources/fonts/RODUScut300.otf; sourceTree = "<group>"; };
+		536D3AF3198BCEA100FCEED0 /* HelperFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperFactory.h; sourceTree = "<group>"; };
+		536D3AF4198BCEA100FCEED0 /* HelperFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperFactory.m; sourceTree = "<group>"; };
+		536D3AF7198BDA3D00FCEED0 /* InputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextField.h; sourceTree = "<group>"; };
+		536D3AF8198BDA3D00FCEED0 /* InputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTextField.m; sourceTree = "<group>"; };
+		5389CE821993994F00043984 /* NewTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackingViewController.h; sourceTree = "<group>"; };
+		5389CE831993994F00043984 /* NewTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingViewController.m; sourceTree = "<group>"; };
+		5389CE851993995A00043984 /* NewTrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackingView.h; sourceTree = "<group>"; };
+		5389CE861993995A00043984 /* NewTrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingView.m; sourceTree = "<group>"; };
+		53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingViewController.h; sourceTree = "<group>"; };
+		53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingViewController.m; sourceTree = "<group>"; };
+		53BE8D761993B1B800DB1D26 /* TrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingView.h; sourceTree = "<group>"; };
+		53BE8D771993B1B800DB1D26 /* TrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingView.m; sourceTree = "<group>"; };
+		53E092FE198BF67200D98618 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		53E092FF198BF67200D98618 /* Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.m; sourceTree = "<group>"; };
+		53E09301198BF9E900D98618 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		53E09302198BF9E900D98618 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		53F38A9E198A8A88002BAA3F /* stealthtracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stealthtracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F38AA1198A8A88002BAA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +96,7 @@
 		53F38AC6198A8A88002BAA3F /* stealthtrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stealthtrackerTests.m; sourceTree = "<group>"; };
 		53F38AD3198A94EC002BAA3F /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		53F38AD4198A94EC002BAA3F /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		65CDB2D05EAC4932BC70D3F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +107,7 @@
 				53F38AA4198A8A88002BAA3F /* CoreGraphics.framework in Frameworks */,
 				53F38AA6198A8A88002BAA3F /* UIKit.framework in Frameworks */,
 				53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */,
+				F98F4C007CAE4CD3A2D8CC06 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,13 +135,84 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		536D3AE9198BB4B600FCEED0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				536D3AE6198BB4B000FCEED0 /* LoginViewController.h */,
+				536D3AE7198BB4B000FCEED0 /* LoginViewController.m */,
+				536D3AEA198BB4C500FCEED0 /* LoginView.h */,
+				536D3AEB198BB4C500FCEED0 /* LoginView.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		536D3AF1198BC99000FCEED0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				536D3AED198BC98300FCEED0 /* Arame-Thin.otf */,
+				536D3AEE198BC98300FCEED0 /* RODUScut300.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		536D3AF2198BCE8C00FCEED0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				536D3AF3198BCEA100FCEED0 /* HelperFactory.h */,
+				536D3AF4198BCEA100FCEED0 /* HelperFactory.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		536D3AF6198BDA1D00FCEED0 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				536D3AF7198BDA3D00FCEED0 /* InputTextField.h */,
+				536D3AF8198BDA3D00FCEED0 /* InputTextField.m */,
+				53E092FE198BF67200D98618 /* Label.h */,
+				53E092FF198BF67200D98618 /* Label.m */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		5389CE811993993700043984 /* New Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				5389CE821993994F00043984 /* NewTrackingViewController.h */,
+				5389CE831993994F00043984 /* NewTrackingViewController.m */,
+				5389CE851993995A00043984 /* NewTrackingView.h */,
+				5389CE861993995A00043984 /* NewTrackingView.m */,
+			);
+			name = "New Tracking";
+			sourceTree = "<group>";
+		};
+		53BE8D721993B11D00DB1D26 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */,
+				53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */,
+				53BE8D761993B1B800DB1D26 /* TrackingView.h */,
+				53BE8D771993B1B800DB1D26 /* TrackingView.m */,
+			);
+			name = Tracking;
+			sourceTree = "<group>";
+		};
+		53BE8D791993B29300DB1D26 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HUD;
+			sourceTree = "<group>";
+		};
 		53F38A95198A8A88002BAA3F = {
 			isa = PBXGroup;
 			children = (
+				536D3AF1198BC99000FCEED0 /* Fonts */,
 				53F38AA7198A8A88002BAA3F /* stealthtracker */,
 				53F38AC0198A8A88002BAA3F /* stealthtrackerTests */,
 				53F38AA0198A8A88002BAA3F /* Frameworks */,
 				53F38A9F198A8A88002BAA3F /* Products */,
+				0A421B7E88DF47D7A4308232 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +232,7 @@
 				53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */,
 				53F38AA5198A8A88002BAA3F /* UIKit.framework */,
 				53F38ABA198A8A88002BAA3F /* XCTest.framework */,
+				65CDB2D05EAC4932BC70D3F1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,7 +290,10 @@
 		53F38AD1198A927C002BAA3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53BE8D721993B11D00DB1D26 /* Tracking */,
+				5389CE811993993700043984 /* New Tracking */,
 				533531AF198ABF5C0044F5F0 /* Dashboard */,
+				536D3AE9198BB4B600FCEED0 /* Login */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -188,6 +301,7 @@
 		53F38AD2198A92AA002BAA3F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				536D3AF2198BCE8C00FCEED0 /* Helpers */,
 				53F38AD6198A95C3002BAA3F /* Components */,
 				53F38AD3198A94EC002BAA3F /* NavigationController.h */,
 				53F38AD4198A94EC002BAA3F /* NavigationController.m */,
@@ -200,6 +314,10 @@
 		53F38AD6198A95C3002BAA3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				53BE8D791993B29300DB1D26 /* HUD */,
+				53E09301198BF9E900D98618 /* Button.h */,
+				53E09302198BF9E900D98618 /* Button.m */,
+				536D3AF6198BDA1D00FCEED0 /* Form */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -211,9 +329,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F38ACA198A8A88002BAA3F /* Build configuration list for PBXNativeTarget "stealthtracker" */;
 			buildPhases = (
+				DF6B8083F6324E65A48A2516 /* Check Pods Manifest.lock */,
 				53F38A9A198A8A88002BAA3F /* Sources */,
 				53F38A9B198A8A88002BAA3F /* Frameworks */,
 				53F38A9C198A8A88002BAA3F /* Resources */,
+				40C27A9D595849C2A06B1282 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,6 +404,8 @@
 			files = (
 				53F38AAC198A8A88002BAA3F /* InfoPlist.strings in Resources */,
 				53F38AB4198A8A88002BAA3F /* Images.xcassets in Resources */,
+				536D3AF0198BC98300FCEED0 /* RODUScut300.otf in Resources */,
+				536D3AEF198BC98300FCEED0 /* Arame-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,15 +419,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		40C27A9D595849C2A06B1282 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF6B8083F6324E65A48A2516 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53F38A9A198A8A88002BAA3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */,
 				533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */,
+				5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */,
 				531167D9198AF47300A229FF /* AppModel.m in Sources */,
+				53E09303198BF9E900D98618 /* Button.m in Sources */,
+				53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */,
+				536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */,
+				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
+				5389CE871993995A00043984 /* NewTrackingView.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,
+				53E09300198BF67200D98618 /* Label.m in Sources */,
+				536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */,
+				536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,
 				53F38AAE198A8A88002BAA3F /* main.m in Sources */,
 			);
@@ -423,6 +588,7 @@
 		};
 		53F38ACB198A8A88002BAA3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A421B7E88DF47D7A4308232 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -439,6 +605,7 @@
 		};
 		53F38ACC198A8A88002BAA3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A421B7E88DF47D7A4308232 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -20,21 +20,47 @@
     if (self)
     {
         // Custom initialization
-        self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
-        [self pushViewController:self.dashboardViewController animated:NO];
+        self.appModel = [AppModel getInstance];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(isLoggedInChangedHandler:) name:@"IS_LOGGEDIN_CHANGED" object:nil];
+        
+        [self isLoggedInChangedHandler:nil];
     }
     return self;
 }
 
+//Check if user is logged in.
+-(void)isLoggedInChangedHandler:(id)sender
+{
+    if([[AppModel getInstance] isLoggedIn])
+    {
+        self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
+        [self pushViewController:self.dashboardViewController animated:YES];
+    }
+    else
+    {
+        self.loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+        [self pushViewController:self.loginViewController animated:YES];
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //Do any additional setup after loading the view.
     
-    //setup navigation bar appearance
+    //Setup navigation bar appearance
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1]];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    if([self.appModel isLoggedIn])
+    {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
+    }
+    else
+    {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+    }
 }
 
 - (void)didReceiveMemoryWarning

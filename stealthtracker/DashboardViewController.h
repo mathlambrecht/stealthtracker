@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "AppModel.h"
 #import "DashboardView.h"
+#import "NewTrackingViewController.h"
 
 @interface DashboardViewController : UIViewController
 
-@property (strong, nonatomic) DashboardView *dashboardView;
+@property (strong, nonatomic) AppModel *appModel;
+@property (strong, nonatomic) DashboardView *view;
 
 @end

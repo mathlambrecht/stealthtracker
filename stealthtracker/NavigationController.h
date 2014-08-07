@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#import "AppModel.h"
+
 #import "DashboardViewController.h"
+#import "LoginViewController.h"
 
 @interface NavigationController : UINavigationController
 
+@property(strong, nonatomic) AppModel *appModel;
+
 @property (strong, nonatomic) DashboardViewController *dashboardViewController;
+@property (strong, nonatomic) LoginViewController *loginViewController;
 
 @property (strong, nonatomic) UIBarButtonItem *btnMenu;
 @property (strong, nonatomic) UIImageView *imgViewLogo;

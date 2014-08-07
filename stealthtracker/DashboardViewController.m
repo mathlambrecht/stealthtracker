@@ -17,9 +17,11 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self)
     {
         // Custom initialization
+        self.appModel = [AppModel getInstance];
         
         //Create navbar
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnMenu.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnMenuClicked:)];
@@ -27,26 +29,26 @@
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnNewTracking.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnNewTrackingClicked:)];
         [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
-        
-        
     }
+    
     return self;
 }
 
 -(void)btnMenuClicked:(id)sender
 {
-    
 }
 
 -(void)btnNewTrackingClicked:(id)sender
 {
-    
+    NewTrackingViewController *newTrackingViewController = [[NewTrackingViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:newTrackingViewController animated:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[DashboardView alloc] initWithFrame:bounds];
