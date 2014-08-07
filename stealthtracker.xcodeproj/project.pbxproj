@@ -18,6 +18,7 @@
 		536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AF8198BDA3D00FCEED0 /* InputTextField.m */; };
 		5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE831993994F00043984 /* NewTrackingViewController.m */; };
 		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
+		539761D8199418A40073A323 /* DatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 539761D7199418A40073A323 /* DatabaseService.m */; };
 		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
 		53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D771993B1B800DB1D26 /* TrackingView.m */; };
 		53E09300198BF67200D98618 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E092FF198BF67200D98618 /* Label.m */; };
@@ -70,6 +71,8 @@
 		5389CE831993994F00043984 /* NewTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingViewController.m; sourceTree = "<group>"; };
 		5389CE851993995A00043984 /* NewTrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackingView.h; sourceTree = "<group>"; };
 		5389CE861993995A00043984 /* NewTrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingView.m; sourceTree = "<group>"; };
+		539761D6199418A40073A323 /* DatabaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseService.h; sourceTree = "<group>"; };
+		539761D7199418A40073A323 /* DatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseService.m; sourceTree = "<group>"; };
 		53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingViewController.h; sourceTree = "<group>"; };
 		53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingViewController.m; sourceTree = "<group>"; };
 		53BE8D761993B1B800DB1D26 /* TrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingView.h; sourceTree = "<group>"; };
@@ -184,6 +187,15 @@
 				5389CE861993995A00043984 /* NewTrackingView.m */,
 			);
 			name = "New Tracking";
+			sourceTree = "<group>";
+		};
+		539761D5199417EC0073A323 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				539761D6199418A40073A323 /* DatabaseService.h */,
+				539761D7199418A40073A323 /* DatabaseService.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		53BE8D721993B11D00DB1D26 /* Tracking */ = {
@@ -301,6 +313,7 @@
 		53F38AD2198A92AA002BAA3F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				539761D5199417EC0073A323 /* Service */,
 				536D3AF2198BCE8C00FCEED0 /* Helpers */,
 				53F38AD6198A95C3002BAA3F /* Components */,
 				53F38AD3198A94EC002BAA3F /* NavigationController.h */,
@@ -465,6 +478,7 @@
 				53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */,
 				536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */,
 				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
+				539761D8199418A40073A323 /* DatabaseService.m in Sources */,
 				5389CE871993995A00043984 /* NewTrackingView.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,

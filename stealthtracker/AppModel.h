@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DatabaseService.h"
 
 @interface AppModel : NSObject
 
 @property (nonatomic, readwrite) BOOL isLoggedIn;
-@property (nonatomic, readwrite, strong) NSString *username;
+@property (nonatomic, readwrite, strong) NSDictionary *dUser;
 
 + (id)getInstance;
--(void)navigateToScreen:(NSString *)screen;
 
 @end

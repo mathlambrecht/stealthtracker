@@ -25,13 +25,13 @@
 
 -(void)createScreen
 {
-    UIImage *lineImage = [UIImage imageNamed:@"bgNavBar.png"];
-    UIImageView *lineImageView = [[UIImageView alloc] initWithImage:lineImage];
-    lineImageView.frame = CGRectMake(0, 25, lineImage.size.width, lineImage.size.height);
-    [self addSubview:lineImageView];
+//    UIImage *lineImage = [UIImage imageNamed:@"bgNavBar.png"];
+//    UIImageView *lineImageView = [[UIImageView alloc] initWithImage:lineImage];
+//    lineImageView.frame = CGRectMake(0, 25, lineImage.size.width, lineImage.size.height);
+//    [self addSubview:lineImageView];
     
     UIImage *bgBtnPause = [UIImage imageNamed:@"btnPause.png"];
-    self.btnPause = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnPause.size.width/2, 15, bgBtnPause.size.width, bgBtnPause.size.height)];
+    self.btnPause = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnPause.size.width/2, 30, bgBtnPause.size.width, bgBtnPause.size.height)];
     [self.btnPause setBackgroundImage:bgBtnPause forState:UIControlStateNormal];
     [self addSubview:self.btnPause];
 }

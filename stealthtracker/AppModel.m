@@ -11,10 +11,10 @@
 @implementation AppModel
 
 @synthesize isLoggedIn = _isLoggedIn;
-@synthesize username = _username;
+@synthesize dUser = _dUser;
 
 
-//Singleton - Init
+// ---------------------------------------- Singleton - Init ----------------------------------------
 +(id)getInstance
 {
     static AppModel *appModel = nil;
@@ -32,22 +32,25 @@
     if(self = [super init])
     {
         _isLoggedIn = false;
+        
+        _dUser = @{
+                   @"id" : @"1",
+                   @"username": @"mathlambrecht",
+                   @"email": @"math.lambrecht@gmail.com"
+                   };
+        
+        
     }
     
     return self;
 }
 
-//Functions
--(void)navigateToScreen:(NSString *)screen
-{
-    if ([screen isEqualToString:@"NEWTRACKING"])
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"NAVIGATE_TO_NEWTRACKING" object:self];
-    }
-}
+// ---------------------------------------- Functions ----------------------------------------
 
 
-//Getters - Setters
+// ---------------------------------------- Getters/Setters ----------------------------------------
+
+//isLoggedIn
 -(void)setIsLoggedIn:(BOOL)isLoggedIn
 {
     if(_isLoggedIn != isLoggedIn)
@@ -62,17 +65,6 @@
 {
     return _isLoggedIn;
 }
-
--(void)setUsername:(NSString *)username
-{
-    _username = username;
-}
-
--(NSString *)username
-{
-    return _username;
-}
-
 
 
 @end
