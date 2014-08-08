@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ValueLabel.h"
 #import "Label.h"
 
 @interface Polygon : UIView
 
-@property(strong, nonatomic) Label *lblValue;
+@property(strong, nonatomic) ValueLabel *lblValue;
 
--(id)initWithFrame:(CGRect)frame polygon:(UIImage *)image label:(NSString *)string;
+- (id)initWithFrame:(CGRect)frame polygon:(UIImage *)image value:(int)integer label:(NSString *)string;
 
 @end

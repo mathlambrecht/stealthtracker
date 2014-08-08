@@ -10,7 +10,7 @@
 
 @implementation Polygon
 
-- (id)initWithFrame:(CGRect)frame polygon:(UIImage *)image label:(NSString *)string
+- (id)initWithFrame:(CGRect)frame polygon:(UIImage *)image value:(int)integer label:(NSString *)string
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -20,12 +20,15 @@
         imageView.frame = frame;
         [self addSubview:imageView];
         
-        self.lblValue = [[Label alloc] initWithFrame:frame andString:@"X"];
+        self.lblValue = [[ValueLabel alloc] initWithFrame:frame value:integer];
+        self.lblValue.frame = CGRectMake(self.frame.origin.x + self.frame.size.width/2 - self.lblValue.frame.size.width/2, self.frame.origin.y + self.frame.size.height/2 - self.lblValue.frame.size.height/2, self.lblValue.frame.size.width, self.lblValue.frame.size.height);
         [self addSubview:self.lblValue];
         
-        //Label *label = [[Label alloc] initWithFrame:frame andString:@"Skirms"];
-        //[self addSubview:label];
+        Label *label = [[Label alloc] initWithFrame:frame andString:string];
+        label.frame = CGRectMake(self.frame.origin.x + self.frame.size.width/2 - label.frame.size.width/2, self.frame.size.height - 10, label.frame.size.width, label.frame.size.height);
+        [self addSubview:label];
     }
+    
     return self;
 }
 

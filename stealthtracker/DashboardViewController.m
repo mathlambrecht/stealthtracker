@@ -58,9 +58,6 @@
         
         NSLog(@"%i", skirm.result);
     }
-    
-    //total wins
-    //total losses
 }
 
 -(void)btnMenuClicked:(id)sender

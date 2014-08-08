@@ -27,7 +27,7 @@
 -(void)createTopPolys
 {
     UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
-    self.polyTotalSkirms = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image label:@"skirms"];
+    self.polyTotalSkirms = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:10 label:@"skirms"];
     [self addSubview:self.polyTotalSkirms];
 }
 

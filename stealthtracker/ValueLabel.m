@@ -10,11 +10,18 @@
 
 @implementation ValueLabel
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame value:(int)integer
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         // Initialization code
+        self.font = [UIFont fontWithName:@"Arame-Thin" size:20];
+        self.textColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
+        NSString *string = [NSString stringWithFormat:@"%d", integer];
+        self.attributedText = [HelperFactory createAttributedString:string];
+        self.textAlignment = NSTextAlignmentCenter;
+        self.adjustsFontSizeToFitWidth = YES;
     }
     return self;
 }

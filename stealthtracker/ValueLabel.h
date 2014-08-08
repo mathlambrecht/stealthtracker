@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HelperFactory.h"
 
 @interface ValueLabel : UILabel
+
+- (id)initWithFrame:(CGRect)frame value:(int)integer;
 
 @end
