@@ -19,6 +19,7 @@
         self.font = [UIFont fontWithName:@"Arame-Thin" size:14];
         self.textColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
         self.attributedText = [HelperFactory createAttributedString:string];
+        self.adjustsFontSizeToFitWidth = YES;
     }
     return self;
 }

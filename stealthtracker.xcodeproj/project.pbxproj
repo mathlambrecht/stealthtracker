@@ -10,6 +10,8 @@
 		531167D9198AF47300A229FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531167D8198AF47300A229FF /* AppModel.m */; };
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
+		5367C68519954649007D9F99 /* Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367C68419954649007D9F99 /* Polygon.m */; };
+		5367C68919954C18007D9F99 /* ValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367C68819954C18007D9F99 /* ValueLabel.m */; };
 		536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AE7198BB4B000FCEED0 /* LoginViewController.m */; };
 		536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AEB198BB4C500FCEED0 /* LoginView.m */; };
 		536D3AEF198BC98300FCEED0 /* Arame-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 536D3AED198BC98300FCEED0 /* Arame-Thin.otf */; };
@@ -36,6 +38,8 @@
 		53F38AC5198A8A88002BAA3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53F38AC3198A8A88002BAA3F /* InfoPlist.strings */; };
 		53F38AC7198A8A88002BAA3F /* stealthtrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F38AC6198A8A88002BAA3F /* stealthtrackerTests.m */; };
 		53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F38AD4198A94EC002BAA3F /* NavigationController.m */; };
+		53F9CF3719951B48009DBB75 /* SkirmDO.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F9CF3619951B48009DBB75 /* SkirmDO.m */; };
+		53F9CF3A19951C33009DBB75 /* DOFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F9CF3919951C33009DBB75 /* DOFactory.m */; };
 		F98F4C007CAE4CD3A2D8CC06 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CDB2D05EAC4932BC70D3F1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		533531B1198ABF920044F5F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		533531B3198ABFA80044F5F0 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
 		533531B4198ABFA80044F5F0 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
+		5367C68319954649007D9F99 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
+		5367C68419954649007D9F99 /* Polygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polygon.m; sourceTree = "<group>"; };
+		5367C68719954C18007D9F99 /* ValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueLabel.h; sourceTree = "<group>"; };
+		5367C68819954C18007D9F99 /* ValueLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueLabel.m; sourceTree = "<group>"; };
 		536D3AE6198BB4B000FCEED0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		536D3AE7198BB4B000FCEED0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		536D3AEA198BB4C500FCEED0 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
@@ -99,6 +107,10 @@
 		53F38AC6198A8A88002BAA3F /* stealthtrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stealthtrackerTests.m; sourceTree = "<group>"; };
 		53F38AD3198A94EC002BAA3F /* NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		53F38AD4198A94EC002BAA3F /* NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		53F9CF3519951B48009DBB75 /* SkirmDO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkirmDO.h; sourceTree = "<group>"; };
+		53F9CF3619951B48009DBB75 /* SkirmDO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkirmDO.m; sourceTree = "<group>"; };
+		53F9CF3819951C33009DBB75 /* DOFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOFactory.h; sourceTree = "<group>"; };
+		53F9CF3919951C33009DBB75 /* DOFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOFactory.m; sourceTree = "<group>"; };
 		65CDB2D05EAC4932BC70D3F1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +150,19 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		5367C68619954860007D9F99 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				53E092FE198BF67200D98618 /* Label.h */,
+				53E092FF198BF67200D98618 /* Label.m */,
+				53E09301198BF9E900D98618 /* Button.h */,
+				53E09302198BF9E900D98618 /* Button.m */,
+				5367C68719954C18007D9F99 /* ValueLabel.h */,
+				5367C68819954C18007D9F99 /* ValueLabel.m */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
 		536D3AE9198BB4B600FCEED0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,13 +183,16 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		536D3AF2198BCE8C00FCEED0 /* Helpers */ = {
+		536D3AF2198BCE8C00FCEED0 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
+				53F9CF3419951AD6009DBB75 /* Data Object */,
 				536D3AF3198BCEA100FCEED0 /* HelperFactory.h */,
 				536D3AF4198BCEA100FCEED0 /* HelperFactory.m */,
+				53F9CF3819951C33009DBB75 /* DOFactory.h */,
+				53F9CF3919951C33009DBB75 /* DOFactory.m */,
 			);
-			name = Helpers;
+			name = Factory;
 			sourceTree = "<group>";
 		};
 		536D3AF6198BDA1D00FCEED0 /* Form */ = {
@@ -172,13 +200,11 @@
 			children = (
 				536D3AF7198BDA3D00FCEED0 /* InputTextField.h */,
 				536D3AF8198BDA3D00FCEED0 /* InputTextField.m */,
-				53E092FE198BF67200D98618 /* Label.h */,
-				53E092FF198BF67200D98618 /* Label.m */,
 			);
 			name = Form;
 			sourceTree = "<group>";
 		};
-		5389CE811993993700043984 /* New Tracking */ = {
+		5389CE811993993700043984 /* Start Tracking */ = {
 			isa = PBXGroup;
 			children = (
 				5389CE821993994F00043984 /* NewTrackingViewController.h */,
@@ -186,7 +212,7 @@
 				5389CE851993995A00043984 /* NewTrackingView.h */,
 				5389CE861993995A00043984 /* NewTrackingView.m */,
 			);
-			name = "New Tracking";
+			name = "Start Tracking";
 			sourceTree = "<group>";
 		};
 		539761D5199417EC0073A323 /* Service */ = {
@@ -212,6 +238,8 @@
 		53BE8D791993B29300DB1D26 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				5367C68319954649007D9F99 /* Polygon.h */,
+				5367C68419954649007D9F99 /* Polygon.m */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -303,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				53BE8D721993B11D00DB1D26 /* Tracking */,
-				5389CE811993993700043984 /* New Tracking */,
+				5389CE811993993700043984 /* Start Tracking */,
 				533531AF198ABF5C0044F5F0 /* Dashboard */,
 				536D3AE9198BB4B600FCEED0 /* Login */,
 			);
@@ -314,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				539761D5199417EC0073A323 /* Service */,
-				536D3AF2198BCE8C00FCEED0 /* Helpers */,
+				536D3AF2198BCE8C00FCEED0 /* Factory */,
 				53F38AD6198A95C3002BAA3F /* Components */,
 				53F38AD3198A94EC002BAA3F /* NavigationController.h */,
 				53F38AD4198A94EC002BAA3F /* NavigationController.m */,
@@ -327,12 +355,20 @@
 		53F38AD6198A95C3002BAA3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5367C68619954860007D9F99 /* Default */,
 				53BE8D791993B29300DB1D26 /* HUD */,
-				53E09301198BF9E900D98618 /* Button.h */,
-				53E09302198BF9E900D98618 /* Button.m */,
 				536D3AF6198BDA1D00FCEED0 /* Form */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		53F9CF3419951AD6009DBB75 /* Data Object */ = {
+			isa = PBXGroup;
+			children = (
+				53F9CF3519951B48009DBB75 /* SkirmDO.h */,
+				53F9CF3619951B48009DBB75 /* SkirmDO.m */,
+			);
+			name = "Data Object";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,9 +506,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5367C68519954649007D9F99 /* Polygon.m in Sources */,
 				536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */,
 				533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */,
 				5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */,
+				53F9CF3A19951C33009DBB75 /* DOFactory.m in Sources */,
 				531167D9198AF47300A229FF /* AppModel.m in Sources */,
 				53E09303198BF9E900D98618 /* Button.m in Sources */,
 				53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */,
@@ -480,6 +518,7 @@
 				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
 				539761D8199418A40073A323 /* DatabaseService.m in Sources */,
 				5389CE871993995A00043984 /* NewTrackingView.m in Sources */,
+				5367C68919954C18007D9F99 /* ValueLabel.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,
 				53E09300198BF67200D98618 /* Label.m in Sources */,
@@ -487,6 +526,7 @@
 				536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,
 				53F38AAE198A8A88002BAA3F /* main.m in Sources */,
+				53F9CF3719951B48009DBB75 /* SkirmDO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

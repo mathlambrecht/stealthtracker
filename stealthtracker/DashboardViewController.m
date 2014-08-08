@@ -31,6 +31,9 @@
         [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
         
         self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoNavBar.png"]];
+        
+        //Create dashboard
+        [self createDashboard];
     }
     
     return self;
@@ -39,6 +42,22 @@
 -(void)createDashboard
 {
     //totalskirms
+    int wins;
+    int losses;
+    
+    for(SkirmDO *skirm in self.appModel.arrSkirms)
+    {
+        if(skirm.result == 1)
+        {
+            wins ++;
+        }
+        else if (skirm.result == 0)
+        {
+            losses ++;
+        }
+        
+        NSLog(@"%i", skirm.result);
+    }
     
     //total wins
     //total losses

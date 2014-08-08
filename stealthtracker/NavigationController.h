@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "AppModel.h"
+#import "DatabaseService.h"
 
 #import "DashboardViewController.h"
 #import "LoginViewController.h"
@@ -16,6 +17,7 @@
 @interface NavigationController : UINavigationController
 
 @property(strong, nonatomic) AppModel *appModel;
+@property(strong, nonatomic) DatabaseService *databaseService;
 
 @property (strong, nonatomic) DashboardViewController *dashboardViewController;
 @property (strong, nonatomic) LoginViewController *loginViewController;

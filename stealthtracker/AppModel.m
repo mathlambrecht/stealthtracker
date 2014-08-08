@@ -12,6 +12,7 @@
 
 @synthesize isLoggedIn = _isLoggedIn;
 @synthesize dUser = _dUser;
+@synthesize arrSkirms = _arrSkirms;
 
 
 // ---------------------------------------- Singleton - Init ----------------------------------------
@@ -38,8 +39,6 @@
                    @"username": @"mathlambrecht",
                    @"email": @"math.lambrecht@gmail.com"
                    };
-        
-        
     }
     
     return self;
@@ -64,6 +63,14 @@
 -(BOOL)isLoggedIn
 {
     return _isLoggedIn;
+}
+
+//arrSkirms
+-(void)setArrSkirms:(NSArray *)arrSkirms
+{
+    _arrSkirms = arrSkirms;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ARRSKIRMS_CHANGED" object:self];
 }
 
 

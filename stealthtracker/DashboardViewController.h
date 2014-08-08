@@ -10,6 +10,7 @@
 #include "AppModel.h"
 #import "DashboardView.h"
 #import "NewTrackingViewController.h"
+#import "SkirmDO.h"
 
 @interface DashboardViewController : UIViewController
 

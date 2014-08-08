@@ -17,8 +17,18 @@
     {
         // Initialization code
         self.backgroundColor = [UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1];
+        
+        //create HUD
+        [self createTopPolys];
     }
     return self;
+}
+
+-(void)createTopPolys
+{
+    UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
+    self.polyTotalSkirms = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image label:@"skirms"];
+    [self addSubview:self.polyTotalSkirms];
 }
 
 /*

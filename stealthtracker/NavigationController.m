@@ -21,8 +21,11 @@
     {
         // Custom initialization
         self.appModel = [AppModel getInstance];
+        self.databaseService = [[DatabaseService alloc] init];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(isLoggedInChangedHandler:) name:@"IS_LOGGEDIN_CHANGED" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(skirmsLoadedHandler:) name:@"SKIRMS_LOADED" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(arrSkirmsChangedHandler:) name:@"ARRSKIRMS_CHANGED" object:nil];
         
         [self isLoggedInChangedHandler:nil];
     }
@@ -34,14 +37,32 @@
 {
     if([[AppModel getInstance] isLoggedIn])
     {
-        self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
-        [self pushViewController:self.dashboardViewController animated:YES];
+        [self getSkirms];
     }
     else
     {
         self.loginViewController = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
         [self pushViewController:self.loginViewController animated:YES];
     }
+}
+
+//Fetch data
+-(void)getSkirms
+{
+    [self.databaseService getSkirmsByUserId:[self.appModel.dUser objectForKey:@"id"]];
+}
+
+//Set Model data
+-(void)skirmsLoadedHandler:(id)sender
+{
+    self.appModel.arrSkirms = self.databaseService.arrSkirms;
+}
+
+//Show dashboard
+-(void)arrSkirmsChangedHandler:(id)sender
+{
+    self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
+    [self pushViewController:self.dashboardViewController animated:YES];
 }
 
 - (void)viewDidLoad
@@ -68,16 +89,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

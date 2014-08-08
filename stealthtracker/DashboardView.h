@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Polygon.h"
 
 @interface DashboardView : UIView
+
+@property(strong, nonatomic)Polygon *polyTotalSkirms;
+@property(strong, nonatomic)Polygon *polyWins;
+@property(strong, nonatomic)Polygon *polyLosses;
 
 @end
