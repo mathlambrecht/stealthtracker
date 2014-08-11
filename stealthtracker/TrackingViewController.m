@@ -21,6 +21,7 @@
     {
         // Custom initialization
         self.appModel = [AppModel getInstance];
+        
         [self createDecibelMeter];
     }
     return self;
@@ -56,6 +57,8 @@
             NSLog(@"[TrackingVC] Microphone use not allowed by user");
         }
     }];
+    
+    
 }
 
 -(void)timerTickHandler

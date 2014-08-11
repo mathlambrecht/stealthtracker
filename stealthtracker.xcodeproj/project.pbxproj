@@ -21,6 +21,7 @@
 		5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE831993994F00043984 /* NewTrackingViewController.m */; };
 		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
 		539761D8199418A40073A323 /* DatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 539761D7199418A40073A323 /* DatabaseService.m */; };
+		53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B2975A1999133300E9DF6F /* DecibelHUD.m */; };
 		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
 		53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D771993B1B800DB1D26 /* TrackingView.m */; };
 		53E09300198BF67200D98618 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E092FF198BF67200D98618 /* Label.m */; };
@@ -81,6 +82,8 @@
 		5389CE861993995A00043984 /* NewTrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingView.m; sourceTree = "<group>"; };
 		539761D6199418A40073A323 /* DatabaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseService.h; sourceTree = "<group>"; };
 		539761D7199418A40073A323 /* DatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseService.m; sourceTree = "<group>"; };
+		53B297591999133300E9DF6F /* DecibelHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecibelHUD.h; sourceTree = "<group>"; };
+		53B2975A1999133300E9DF6F /* DecibelHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecibelHUD.m; sourceTree = "<group>"; };
 		53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingViewController.h; sourceTree = "<group>"; };
 		53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingViewController.m; sourceTree = "<group>"; };
 		53BE8D761993B1B800DB1D26 /* TrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingView.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 			children = (
 				5367C68319954649007D9F99 /* Polygon.h */,
 				5367C68419954649007D9F99 /* Polygon.m */,
+				53B297591999133300E9DF6F /* DecibelHUD.h */,
+				53B2975A1999133300E9DF6F /* DecibelHUD.m */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */,
 				53F9CF3A19951C33009DBB75 /* DOFactory.m in Sources */,
 				531167D9198AF47300A229FF /* AppModel.m in Sources */,
+				53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */,
 				53E09303198BF9E900D98618 /* Button.m in Sources */,
 				53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */,
 				536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */,

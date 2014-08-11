@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Button.h"
 #import "Polygon.h"
+#import "DecibelHUD.h"
 
 @interface TrackingView : UIView
 

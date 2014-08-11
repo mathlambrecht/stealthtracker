@@ -9,6 +9,7 @@
 #import "TrackingView.h"
 
 @implementation TrackingView
+@synthesize seconds = _seconds;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -17,8 +18,6 @@
     {
         // Initialization code
         self.backgroundColor = [UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1];
-        
-        self.seconds = 0;
         
         [self createScreen];
     }
@@ -38,15 +37,25 @@
     [self addSubview:self.btnPause];
     
     UIImage *image = [UIImage imageNamed:@"polyTimer.png"];
-    self.polyTimer = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:1 label:@"skrim time"];
+    self.polyTimer = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/4 - image.size.width/4, 50, image.size.width, image.size.height) polygon:image value:0 label:@"skrim time"];
+    self.polyTimer.lblValue.text = @"00:00:00";
     [self addSubview:self.polyTimer];
+    
+    DecibelHUD *decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self addSubview:decibelHUD];
 }
 
 -(void)setSeconds:(int)seconds
 {
-    NSLog(@"%i", self.seconds);
-    
-    self.polyTimer.lblValue.text = [NSString stringWithFormat:@"%i", self.seconds];
+    if(_seconds != seconds)
+    {
+        _seconds = seconds;
+        
+        NSUInteger minutes  = _seconds/60;
+        NSUInteger hours = minutes/60;
+        
+        self.polyTimer.lblValue.text = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes%60, _seconds%60];
+    }
 }
 
 /*
