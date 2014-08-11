@@ -25,7 +25,7 @@
         [self addSubview:self.lblValue];
         
         Label *label = [[Label alloc] initWithFrame:frame andString:string];
-        label.frame = CGRectMake(self.frame.origin.x + self.frame.size.width/2 - label.frame.size.width/2, self.frame.size.height - 10, label.frame.size.width, label.frame.size.height);
+        label.frame = CGRectMake(self.frame.origin.x + self.frame.size.width/2 - label.frame.size.width/2, self.frame.origin.y + self.frame.size.height - 10, label.frame.size.width, label.frame.size.height);
         [self addSubview:label];
     }
     

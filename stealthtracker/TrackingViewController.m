@@ -21,8 +21,55 @@
     {
         // Custom initialization
         self.appModel = [AppModel getInstance];
+        [self createDecibelMeter];
     }
     return self;
+}
+
+-(void)createDecibelMeter
+{
+    NSDictionary *recorderSettings = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      [NSNumber numberWithInt:kAudioFormatAppleIMA4], AVFormatIDKey,
+                                      [NSNumber numberWithInt:44100], AVSampleRateKey,
+                                      [NSNumber numberWithInt:1], AVNumberOfChannelsKey,
+                                      [NSNumber numberWithInt:16], AVLinearPCMBitDepthKey,
+                                      [NSNumber numberWithBool:NO], AVLinearPCMIsBigEndianKey,
+                                      [NSNumber numberWithBool:NO], AVLinearPCMIsFloatKey,
+                                      nil];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [audioSession setActive:YES error:nil];
+    
+    [audioSession requestRecordPermission:^(BOOL granted)
+    {
+        if(granted)
+        {
+            NSError *e = nil;
+            self.recorder = [[AVAudioRecorder alloc] initWithURL:[NSURL URLWithString:[NSTemporaryDirectory() stringByAppendingPathComponent:@"tmp.caf"]] settings:recorderSettings error:&e];
+            [self.recorder prepareToRecord];
+            self.recorder.meteringEnabled = YES;
+            [self.recorder record];
+        }
+        else
+        {
+            NSLog(@"[TrackingVC] Microphone use not allowed by user");
+        }
+    }];
+}
+
+-(void)timerTickHandler
+{
+    [self.recorder updateMeters];
+    
+    [self.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
+    
+    self.view.seconds += 1;
+}
+
+-(void)btnPauseClickedHandler:(id)sender
+{
+    
 }
 
 - (void)viewDidLoad
@@ -35,6 +82,11 @@
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[TrackingView alloc] initWithFrame:bounds];
+    
+    [self.view.btnPause addTarget:self action:@selector(btnPauseClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.arrDB = [[NSMutableArray alloc] init];
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTickHandler) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -27,8 +27,18 @@
 -(void)createTopPolys
 {
     UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
-    self.polyTotalSkirms = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:10 label:@"skirms"];
+    self.polyTotalSkirms = [[Polygon alloc] initWithFrame:CGRectMake(10, 15, image.size.width, image.size.height) polygon:image value:15 label:@"skirms"];
+    self.polyTotalSkirms.alpha = 0.5;
     [self addSubview:self.polyTotalSkirms];
+    
+    self.polyWins = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/4 - image.size.width/4, self.polyTotalSkirms.frame.origin.y, image.size.width, image.size.height) polygon:image value:7 label:@"wins"];
+    self.polyWins.alpha = 0.5;
+    [self addSubview:self.polyWins];
+    
+    self.polyLosses = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - image.size.width/2 - 10, self.polyWins.frame.origin.y, image.size.width, image.size.height)
+                       polygon:image value:8 label:@"losses"];
+    self.polyLosses.alpha = 0.5;
+    [self addSubview:self.polyLosses];
 }
 
 /*

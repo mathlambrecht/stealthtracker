@@ -18,6 +18,8 @@
         // Initialization code
         self.backgroundColor = [UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1];
         
+        self.seconds = 0;
+        
         [self createScreen];
     }
     return self;
@@ -34,6 +36,17 @@
     self.btnPause = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnPause.size.width/2, 30, bgBtnPause.size.width, bgBtnPause.size.height)];
     [self.btnPause setBackgroundImage:bgBtnPause forState:UIControlStateNormal];
     [self addSubview:self.btnPause];
+    
+    UIImage *image = [UIImage imageNamed:@"polyTimer.png"];
+    self.polyTimer = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:1 label:@"skrim time"];
+    [self addSubview:self.polyTimer];
+}
+
+-(void)setSeconds:(int)seconds
+{
+    NSLog(@"%i", self.seconds);
+    
+    self.polyTimer.lblValue.text = [NSString stringWithFormat:@"%i", self.seconds];
 }
 
 /*

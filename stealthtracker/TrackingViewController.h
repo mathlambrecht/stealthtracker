@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVAudioSession.h>
 #import "AppModel.h"
 #import "TrackingView.h"
 
@@ -14,5 +16,9 @@
 
 @property(strong, nonatomic) AppModel *appModel;
 @property(strong, nonatomic) TrackingView *view;
+
+@property(strong, nonatomic) AVAudioRecorder *recorder;
+@property(strong, nonatomic) NSMutableArray *arrDB;
+@property(strong, nonatomic) NSMutableArray *arrLux;
 
 @end
