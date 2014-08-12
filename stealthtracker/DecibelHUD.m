@@ -39,6 +39,8 @@
         sublayer.contents = (id) [UIImage imageNamed:@"hudDB"].CGImage;
         sublayer.frame = CGRectMake(x, y, 20, 15);
         
+        sublayer.transform = CATransform3DMakeRotation((180/pieces) * M_PI/180, 0, 0, 1);
+        
         [self.layer addSublayer:sublayer];
     }
 }
