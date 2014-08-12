@@ -57,7 +57,10 @@
             NSLog(@"[TrackingVC] Microphone use not allowed by user");
         }
     }];
-    
+}
+
+-(void)createLuxMeter
+{
     
 }
 
@@ -66,6 +69,7 @@
     [self.recorder updateMeters];
     
     [self.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
+    self.view.decibelHUD.dB = [self.recorder averagePowerForChannel:0];
     
     self.view.seconds += 1;
 }

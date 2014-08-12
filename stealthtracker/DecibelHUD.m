@@ -27,29 +27,60 @@
 
 -(void)createHUD
 {
-    int r = 110;
-    int pieces = 19;
+    int r = 115;
+    int pieces = 20;
     
-    for (int i = 0; i < 19; i++)
+    self.container = [CALayer layer];
+    
+    for (int i = 0; i < pieces; i++)
     {
-        float x  = [UIScreen mainScreen].bounds.size.width/2 +  r * cos( (180/pieces * i) * M_PI/180);
-        float y = [UIScreen mainScreen].bounds.size.width/2 + r * sin( (180/pieces * i) * M_PI/180);
+        float x  = r * cos( (180/pieces * i) * M_PI/180);
+        float y = r * sin( (180/pieces * i) * M_PI/180);
         
-        CALayer *sublayer  = [CALayer layer];
-        sublayer.contents = (id) [UIImage imageNamed:@"hudDB"].CGImage;
-        sublayer.frame = CGRectMake(x, y, 20, 15);
+        CAShapeLayer *hudLayer  = [CAShapeLayer layer];
+        hudLayer.contents = (id) [UIImage imageNamed:@"hudDB"].CGImage;
+        hudLayer.frame = CGRectMake(x, y, 20, 15);
         
-        sublayer.transform = CATransform3DMakeRotation((180/pieces) * M_PI/180, 0, 0, 1);
+        hudLayer.transform = CATransform3DMakeRotation( (266 + 180/pieces * i) * M_PI/180, 0, 0, 1);
+        hudLayer.opacity = 0.1;
         
-        [self.layer addSublayer:sublayer];
+        [self.container addSublayer:hudLayer];
     }
+    
+    self.container.position = CGPointMake( self.frame.size.width / 2, self.frame.size.height / 2);
+    self.container.transform = CATransform3DMakeRotation(94 * M_PI/180, 0, 0, 1);
+    [self.layer addSublayer:self.container];
 }
 
--(void)setDB:(NSNumber *)dB
+-(void)setDB:(float)dB
 {
     if(_dB != dB)
     {
         _dB = dB;
+        
+        [self updateHUD:_dB];
+    }
+}
+
+-(void)updateHUD:(float)dB
+{
+    float offset = 80;
+    float convertedDB = (dB + offset) / (offset/20);
+    
+    int i = 0;
+    
+    for (CAShapeLayer *shapeLayer in self.container.sublayers)
+    {
+        if(i < convertedDB)
+        {
+            shapeLayer.opacity = 0 + (i * 0.05);
+            
+            i++;
+        }
+        else
+        {
+            shapeLayer.opacity = 0.1;
+        }
     }
 }
 

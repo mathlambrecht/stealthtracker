@@ -11,7 +11,7 @@
 
 @interface DecibelHUD : UIView
 
-@property(nonatomic, readwrite, strong) NSNumber *dB;
-@property(nonatomic, strong) NSMutableArray *arrImages;
+@property(nonatomic, readwrite) float dB;
+@property (nonatomic, strong) CALayer *container;
 
 @end

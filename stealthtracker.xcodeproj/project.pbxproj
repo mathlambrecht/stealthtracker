@@ -22,8 +22,10 @@
 		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
 		539761D8199418A40073A323 /* DatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 539761D7199418A40073A323 /* DatabaseService.m */; };
 		53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B2975A1999133300E9DF6F /* DecibelHUD.m */; };
+		53B48D8C199AC0F100FA0102 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B48D8B199AC0F100FA0102 /* IOKit.framework */; };
 		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
 		53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D771993B1B800DB1D26 /* TrackingView.m */; };
+		53C90790199AB51400B25885 /* LuxHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C9078F199AB51400B25885 /* LuxHUD.m */; };
 		53E09300198BF67200D98618 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E092FF198BF67200D98618 /* Label.m */; };
 		53E09303198BF9E900D98618 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E09302198BF9E900D98618 /* Button.m */; };
 		53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA1198A8A88002BAA3F /* Foundation.framework */; };
@@ -84,10 +86,13 @@
 		539761D7199418A40073A323 /* DatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseService.m; sourceTree = "<group>"; };
 		53B297591999133300E9DF6F /* DecibelHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecibelHUD.h; sourceTree = "<group>"; };
 		53B2975A1999133300E9DF6F /* DecibelHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecibelHUD.m; sourceTree = "<group>"; };
+		53B48D8B199AC0F100FA0102 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingViewController.h; sourceTree = "<group>"; };
 		53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingViewController.m; sourceTree = "<group>"; };
 		53BE8D761993B1B800DB1D26 /* TrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingView.h; sourceTree = "<group>"; };
 		53BE8D771993B1B800DB1D26 /* TrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingView.m; sourceTree = "<group>"; };
+		53C9078E199AB51400B25885 /* LuxHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuxHUD.h; sourceTree = "<group>"; };
+		53C9078F199AB51400B25885 /* LuxHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuxHUD.m; sourceTree = "<group>"; };
 		53E092FE198BF67200D98618 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
 		53E092FF198BF67200D98618 /* Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.m; sourceTree = "<group>"; };
 		53E09301198BF9E900D98618 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
@@ -122,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B48D8C199AC0F100FA0102 /* IOKit.framework in Frameworks */,
 				53F38AA4198A8A88002BAA3F /* CoreGraphics.framework in Frameworks */,
 				53F38AA6198A8A88002BAA3F /* UIKit.framework in Frameworks */,
 				53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */,
@@ -245,6 +251,8 @@
 				5367C68419954649007D9F99 /* Polygon.m */,
 				53B297591999133300E9DF6F /* DecibelHUD.h */,
 				53B2975A1999133300E9DF6F /* DecibelHUD.m */,
+				53C9078E199AB51400B25885 /* LuxHUD.h */,
+				53C9078F199AB51400B25885 /* LuxHUD.m */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 		53F38AA0198A8A88002BAA3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53B48D8B199AC0F100FA0102 /* IOKit.framework */,
 				53F38AA1198A8A88002BAA3F /* Foundation.framework */,
 				53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */,
 				53F38AA5198A8A88002BAA3F /* UIKit.framework */,
@@ -520,6 +529,7 @@
 				53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */,
 				53E09303198BF9E900D98618 /* Button.m in Sources */,
 				53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */,
+				53C90790199AB51400B25885 /* LuxHUD.m in Sources */,
 				536D3AEC198BB4C500FCEED0 /* LoginView.m in Sources */,
 				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
 				539761D8199418A40073A323 /* DatabaseService.m in Sources */,
@@ -650,6 +660,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A421B7E88DF47D7A4308232 /* Pods.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -659,6 +670,7 @@
 				INFOPLIST_FILE = "stealthtracker/stealthtracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = /Users/mathlambrecht/Documents/stealthtracker/Headers;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -667,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A421B7E88DF47D7A4308232 /* Pods.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -676,6 +689,7 @@
 				INFOPLIST_FILE = "stealthtracker/stealthtracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = /Users/mathlambrecht/Documents/stealthtracker/Headers;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -41,8 +41,11 @@
     self.polyTimer.lblValue.text = @"00:00:00";
     [self addSubview:self.polyTimer];
     
-    DecibelHUD *decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    [self addSubview:decibelHUD];
+    self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self addSubview:self.decibelHUD];
+    
+    self.luxHud = [[LuxHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    [self addSubview:self.luxHud];
 }
 
 -(void)setSeconds:(int)seconds
