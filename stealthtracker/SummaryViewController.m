@@ -24,10 +24,16 @@
         
         if(isListItem)
         {
-            
+            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnDiscard.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnDiscardClickedHandler:)];
+            [self.navigationItem.leftBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
         }
     }
     return self;
+}
+
+-(void)btnDiscardClickedHandler
+{
+    
 }
 
 - (void)viewDidLoad
