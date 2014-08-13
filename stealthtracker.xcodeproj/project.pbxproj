@@ -195,7 +195,6 @@
 		536D3AF2198BCE8C00FCEED0 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				53F9CF3419951AD6009DBB75 /* Data Object */,
 				536D3AF3198BCEA100FCEED0 /* HelperFactory.h */,
 				536D3AF4198BCEA100FCEED0 /* HelperFactory.m */,
 				53F9CF3819951C33009DBB75 /* DOFactory.h */,
@@ -355,8 +354,6 @@
 		53F38AD2198A92AA002BAA3F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				539761D5199417EC0073A323 /* Service */,
-				536D3AF2198BCE8C00FCEED0 /* Factory */,
 				53F38AD6198A95C3002BAA3F /* Components */,
 				53F38AD3198A94EC002BAA3F /* NavigationController.h */,
 				53F38AD4198A94EC002BAA3F /* NavigationController.m */,
@@ -369,6 +366,9 @@
 		53F38AD6198A95C3002BAA3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				53F9CF3419951AD6009DBB75 /* Data Object */,
+				539761D5199417EC0073A323 /* Service */,
+				536D3AF2198BCE8C00FCEED0 /* Factory */,
 				5367C68619954860007D9F99 /* Default */,
 				53BE8D791993B29300DB1D26 /* HUD */,
 				536D3AF6198BDA1D00FCEED0 /* Form */,

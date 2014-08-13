@@ -21,22 +21,9 @@
         [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
         [self setAttributedTitle:[HelperFactory createAttributedString:string] forState:UIControlStateNormal];
     }
+    
     return self;
 }
-
-//- (void)setTitleFont:(UIFont *)font
-//{
-//    if (_titleFont != font)
-//    {
-//        _titleFont = font;
-//        self.titleLabel.font = font;
-//    }
-//}
-
-//- (void)initWithFrame:(CGRect)frame andString:(NSString *)string
-//{
-//    [self initWithFrame:frame];
-//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

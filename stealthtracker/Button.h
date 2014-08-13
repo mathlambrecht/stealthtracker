@@ -11,8 +11,6 @@
 
 @interface Button : UIButton
 
-//@property (strong, nonatomic) UIFont *titleFont UI_APPEARANCE_SELECTOR;
-
-- (id)initWithFrame:(CGRect)frame andString:(NSString *)string;
+-(id)initWithFrame:(CGRect)frame andString:(NSString *)string;
 
 @end

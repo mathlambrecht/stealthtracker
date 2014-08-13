@@ -23,7 +23,16 @@
         self.appModel = [AppModel getInstance];
         
         [self createDecibelMeter];
+        [self createLuxMeter];
+        
+        [self.view.btnPause addTarget:self action:@selector(btnPauseClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.btnResume addTarget:self action:@selector(btnResumeClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
     }
+    
     return self;
 }
 
@@ -59,11 +68,9 @@
     }];
 }
 
--(void)createLuxMeter
-{
-    
-}
+-(void)createLuxMeter{}
 
+// ---------------------------------------- TickHandler ----------------------------------------
 -(void)timerTickHandler
 {
     [self.recorder updateMeters];
@@ -71,12 +78,43 @@
     [self.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
     self.view.decibelHUD.dB = [self.recorder averagePowerForChannel:0];
     
-    self.view.seconds += 1;
+    self.appModel.time += 1;
+    self.view.seconds = self.appModel.time;
 }
 
 -(void)btnPauseClickedHandler:(id)sender
 {
+    //disable HUD
     
+    //stop time
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    //show options to continue / end tracking
+    self.isPaused = !self.isPaused;
+    [self.view showOptions:self.isPaused];
+}
+
+-(void)btnResumeClickedHandler:(id)sender
+{
+    self.isPaused = !self.isPaused;
+    [self.view showOptions:self.isPaused];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTickHandler) userInfo:nil repeats:YES];
+}
+
+-(void)btnEndClickedHandler:(id)sender
+{
+}
+
+-(void)btnKillCickedHandler:(id)sender
+{
+    self.appModel.kills += 1;
+}
+
+-(void)btnDeathClickedHandler:(id)sender
+{
+    self.appModel.deaths += 1;
 }
 
 - (void)viewDidLoad
@@ -90,16 +128,28 @@
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[TrackingView alloc] initWithFrame:bounds];
     
-    [self.view.btnPause addTarget:self action:@selector(btnPauseClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
-    
     self.arrDB = [[NSMutableArray alloc] init];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTickHandler) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTickHandler) userInfo:nil repeats:YES];
+    
+    self.isPaused = false;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillDisappear:animated];
 }
 
 /*

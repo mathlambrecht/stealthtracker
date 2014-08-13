@@ -15,6 +15,12 @@
 @property (nonatomic, readwrite, strong) NSDictionary *dUser;
 @property (nonatomic, readwrite, strong) NSArray *arrSkirms;
 
+@property (nonatomic, readwrite) int time;
+@property (nonatomic, readwrite, strong) NSArray *arrDB;
+@property (nonatomic, readwrite, strong) NSArray *arrLux;
+@property (nonatomic, readwrite) int kills;
+@property (nonatomic, readwrite) int deaths;
+
 + (id)getInstance;
 
 @end

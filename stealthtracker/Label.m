@@ -20,7 +20,6 @@
         self.textColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
         self.attributedText = [HelperFactory createAttributedString:string];
         self.textAlignment = NSTextAlignmentCenter;
-        self.adjustsFontSizeToFitWidth = YES;
     }
     return self;
 }

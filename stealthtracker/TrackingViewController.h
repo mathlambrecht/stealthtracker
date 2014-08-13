@@ -17,8 +17,12 @@
 @property(strong, nonatomic) AppModel *appModel;
 @property(strong, nonatomic) TrackingView *view;
 
+@property(strong, nonatomic) NSTimer *timer;
+
 @property(strong, nonatomic) AVAudioRecorder *recorder;
 @property(strong, nonatomic) NSMutableArray *arrDB;
 @property(strong, nonatomic) NSMutableArray *arrLux;
+
+@property(nonatomic) BOOL isPaused;
 
 @end
