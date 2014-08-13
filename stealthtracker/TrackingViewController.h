@@ -11,6 +11,7 @@
 #import <AVFoundation/AVAudioSession.h>
 #import "AppModel.h"
 #import "TrackingView.h"
+#import "SummaryViewController.h"
 
 @interface TrackingViewController : UIViewController
 

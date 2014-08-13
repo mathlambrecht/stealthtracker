@@ -16,10 +16,12 @@
 @property (nonatomic, readwrite, strong) NSArray *arrSkirms;
 
 @property (nonatomic, readwrite) int time;
-@property (nonatomic, readwrite, strong) NSArray *arrDB;
-@property (nonatomic, readwrite, strong) NSArray *arrLux;
+@property (nonatomic, readwrite, strong) NSMutableArray *arrDB;
+@property (nonatomic, readwrite, strong) NSMutableArray *arrLux;
 @property (nonatomic, readwrite) int kills;
 @property (nonatomic, readwrite) int deaths;
+
+@property (nonatomic, readwrite) BOOL isTrackingFinished;
 
 + (id)getInstance;
 

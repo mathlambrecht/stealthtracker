@@ -13,6 +13,7 @@
 @synthesize isLoggedIn = _isLoggedIn;
 @synthesize dUser = _dUser;
 @synthesize arrSkirms = _arrSkirms;
+@synthesize isTrackingFinished = _isTrackingFinished;
 
 
 // ---------------------------------------- Singleton - Init ----------------------------------------
@@ -39,6 +40,8 @@
                    @"username": @"mathlambrecht",
                    @"email": @"math.lambrecht@gmail.com"
                    };
+        
+        self.isTrackingFinished = false;
     }
     
     return self;
@@ -68,10 +71,28 @@
 //arrSkirms
 -(void)setArrSkirms:(NSArray *)arrSkirms
 {
-    _arrSkirms = arrSkirms;
+    if(_arrSkirms != arrSkirms)
+    {
+        _arrSkirms = arrSkirms;
+    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ARRSKIRMS_CHANGED" object:self];
 }
 
+//Tracking Finished
+-(BOOL)isTrackingFinished
+{
+    return _isTrackingFinished;
+}
+
+-(void)setIsTrackingFinished:(BOOL)isTrackingFinished
+{
+    if(_isTrackingFinished != isTrackingFinished)
+    {
+        _isTrackingFinished = isTrackingFinished;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"IS_TRACKING_FINISHED_CHANGED" object:self];
+    }
+}
 
 @end

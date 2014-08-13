@@ -75,7 +75,7 @@
 {
     [self.recorder updateMeters];
     
-    [self.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
+    [self.appModel.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
     self.view.decibelHUD.dB = [self.recorder averagePowerForChannel:0];
     
     self.appModel.time += 1;
@@ -105,6 +105,10 @@
 
 -(void)btnEndClickedHandler:(id)sender
 {
+    self.appModel.isTrackingFinished = true;
+    
+    SummaryViewController *summaryViewController = [[SummaryViewController alloc] initWithNibName:nil bundle:nil andIsListItem:false];
+    [self.navigationController pushViewController:summaryViewController animated:YES];
 }
 
 -(void)btnKillCickedHandler:(id)sender

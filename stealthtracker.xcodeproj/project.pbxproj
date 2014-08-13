@@ -10,6 +10,8 @@
 		531167D9198AF47300A229FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531167D8198AF47300A229FF /* AppModel.m */; };
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
+		5354EE1A199BDA3200DD3E34 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354EE19199BDA3200DD3E34 /* SummaryViewController.m */; };
+		5354EE1D199BDA4700DD3E34 /* SummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354EE1C199BDA4700DD3E34 /* SummaryView.m */; };
 		5367C68519954649007D9F99 /* Polygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367C68419954649007D9F99 /* Polygon.m */; };
 		5367C68919954C18007D9F99 /* ValueLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5367C68819954C18007D9F99 /* ValueLabel.m */; };
 		536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AE7198BB4B000FCEED0 /* LoginViewController.m */; };
@@ -64,6 +66,10 @@
 		533531B1198ABF920044F5F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		533531B3198ABFA80044F5F0 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
 		533531B4198ABFA80044F5F0 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
+		5354EE18199BDA3200DD3E34 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		5354EE19199BDA3200DD3E34 /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		5354EE1B199BDA4700DD3E34 /* SummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryView.h; sourceTree = "<group>"; };
+		5354EE1C199BDA4700DD3E34 /* SummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryView.m; sourceTree = "<group>"; };
 		5367C68319954649007D9F99 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
 		5367C68419954649007D9F99 /* Polygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polygon.m; sourceTree = "<group>"; };
 		5367C68719954C18007D9F99 /* ValueLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueLabel.h; sourceTree = "<group>"; };
@@ -157,6 +163,17 @@
 				533531B4198ABFA80044F5F0 /* DashboardView.m */,
 			);
 			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		5354EE17199BDA0000DD3E34 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				5354EE18199BDA3200DD3E34 /* SummaryViewController.h */,
+				5354EE19199BDA3200DD3E34 /* SummaryViewController.m */,
+				5354EE1B199BDA4700DD3E34 /* SummaryView.h */,
+				5354EE1C199BDA4700DD3E34 /* SummaryView.m */,
+			);
+			name = Summary;
 			sourceTree = "<group>";
 		};
 		5367C68619954860007D9F99 /* Default */ = {
@@ -343,6 +360,7 @@
 		53F38AD1198A927C002BAA3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5354EE17199BDA0000DD3E34 /* Summary */,
 				53BE8D721993B11D00DB1D26 /* Tracking */,
 				5389CE811993993700043984 /* Start Tracking */,
 				533531AF198ABF5C0044F5F0 /* Dashboard */,
@@ -540,9 +558,11 @@
 				53E09300198BF67200D98618 /* Label.m in Sources */,
 				536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */,
 				536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */,
+				5354EE1D199BDA4700DD3E34 /* SummaryView.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,
 				53F38AAE198A8A88002BAA3F /* main.m in Sources */,
 				53F9CF3719951B48009DBB75 /* SkirmDO.m in Sources */,
+				5354EE1A199BDA3200DD3E34 /* SummaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
