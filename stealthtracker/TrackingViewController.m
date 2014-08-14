@@ -107,7 +107,7 @@
 {
     self.appModel.isTrackingFinished = true;
     
-    SummaryViewController *summaryViewController = [[SummaryViewController alloc] initWithNibName:nil bundle:nil andIsListItem:false];
+    SummaryViewController *summaryViewController = [[SummaryViewController alloc] initWithIsListItem:false];
     [self.navigationController pushViewController:summaryViewController animated:YES];
 }
 

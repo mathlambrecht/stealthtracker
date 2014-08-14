@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppModel.h"
 #import "SummaryView.h"
+#import "HelperFactory.h"
+#import "DashboardViewController.h"
 
 @interface SummaryViewController : UIViewController
 
+@property(strong, nonatomic)AppModel *appModel;
 @property(strong, nonatomic) SummaryView *view;
-@property(strong) BOOL isListItem;
+@property(nonatomic) BOOL isListItem;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andIsListItem:(BOOL)isListItem;
+-(id)initWithIsListItem:(BOOL)isListItem;
 
 @end

@@ -31,9 +31,6 @@
         [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
         
         self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoNavBar.png"]];
-        
-        //Create dashboard
-        [self createDashboard];
     }
     
     return self;
@@ -42,22 +39,24 @@
 -(void)createDashboard
 {
     //totalskirms
-    int wins;
-    int losses;
+    int wins = 0;
+    int losses = 0;
     
     for(SkirmDO *skirm in self.appModel.arrSkirms)
     {
         if(skirm.result == 1)
         {
-            wins ++;
+            wins += 1;
         }
         else if (skirm.result == 0)
         {
-            losses ++;
+            losses += 1;
         }
-        
-        NSLog(@"%i", skirm.result);
     }
+    
+    self.view.polyTotalSkirms.lblValue.text = [NSString stringWithFormat:@"%i", wins + losses];
+    self.view.polyLosses.lblValue.text = [NSString stringWithFormat:@"%i", losses];
+    self.view.polyWins.lblValue.text = [NSString stringWithFormat:@"%i", wins];
 }
 
 -(void)btnMenuClicked:(id)sender
@@ -78,6 +77,8 @@
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[DashboardView alloc] initWithFrame:bounds];
+    
+    [self createDashboard];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Label.h"
 
 @interface SummaryView : UIView
 

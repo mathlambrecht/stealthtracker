@@ -30,7 +30,7 @@
 {
     //Timer
     UIImage *image = [UIImage imageNamed:@"polyTimer.png"];
-    self.polyTimer = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/4 - image.size.width/4, 40, image.size.width, image.size.height) polygon:image value:0 label:@"skrim time"];
+    self.polyTimer = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/4 - image.size.width/4, 40, image.size.width, image.size.height) polygon:image value:0 label:@"skirm time"];
     self.polyTimer.lblValue.text = @"00:00:00";
     [self addSubview:self.polyTimer];
 }

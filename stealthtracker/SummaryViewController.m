@@ -14,26 +14,65 @@
 
 @implementation SummaryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andIsListItem:(BOOL)isListItem
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
         // Custom initialization
-        self.isListItem = isListItem;
+        self.appModel = [AppModel getInstance];
         
-        if(isListItem)
+        if(!self.isListItem)
         {
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnDiscard.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnDiscardClickedHandler:)];
             [self.navigationItem.leftBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
+            
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnSave.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnSaveClickedHandler:)];
+            [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
+            
+            self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"Summary"];
+        }
+        else
+        {
+            UIButton *btnBack = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 6, 19)];
+            UIImage *btnBackImage = [UIImage imageNamed:@"btnBack.png"];
+            [btnBack setBackgroundImage:btnBackImage  forState:UIControlStateNormal];
+            [btnBack addTarget:self action:@selector(btnBackClickedHandler) forControlEvents:UIControlEventTouchUpInside];
+            UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] initWithCustomView:btnBack];
+            self.navigationItem.leftBarButtonItem = btnBackItem;
+            
+            self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"This is a date"];
         }
     }
     return self;
 }
 
--(void)btnDiscardClickedHandler
+-(id)initWithIsListItem:(BOOL)isListItem
 {
+    self.isListItem = isListItem;
     
+    return [self initWithNibName:nil bundle:nil];
+}
+
+-(void)btnSaveClickedHandler:(id)sender
+{
+    [self returnToDashBoard];
+}
+
+-(void)btnDiscardClickedHandler:(id)sender
+{
+    [self returnToDashBoard];
+}
+
+-(void)returnToDashBoard
+{
+    DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:dashboardViewController animated:YES];
+}
+
+-(void)btnBackClickedHandler
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
@@ -43,6 +82,7 @@
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[SummaryView alloc] initWithFrame:bounds];
+
 }
 
 - (void)didReceiveMemoryWarning

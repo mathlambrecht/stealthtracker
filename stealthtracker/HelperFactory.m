@@ -25,6 +25,7 @@
     UILabel *lbl = [UILabel new];
     lbl.attributedText = [self createAttributedString:string];
     lbl.textColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
+    lbl.font = [UIFont fontWithName:@"RODUScut300" size:16];
     [lbl sizeToFit];
     return lbl;
 }

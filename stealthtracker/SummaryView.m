@@ -10,13 +10,15 @@
 
 @implementation SummaryView
 
-- (id)initWithFrame:(CGRect)frame andIsListItem:(BOOL)isListItem
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
         // Initialization code
         self.backgroundColor = [UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1];
+        
+        NSLog(@"test");
     }
     return self;
 }

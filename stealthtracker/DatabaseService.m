@@ -39,4 +39,9 @@
     }];
 }
 
+-(void)saveNewSkirm
+{
+    
+}
+
 @end

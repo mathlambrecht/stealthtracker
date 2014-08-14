@@ -20,7 +20,7 @@
         
         UIImage *bgBtnStart = [UIImage imageNamed:@"btnStart.png"];
         
-        self.btnStart = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnStart.size.width/2, [UIScreen mainScreen].bounds.size.height/2 - bgBtnStart.size.height/2, bgBtnStart.size.width, bgBtnStart.size.height) andString:@"Start"];
+        self.btnStart = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnStart.size.width/2, [UIScreen mainScreen].bounds.size.height/2 - [UIApplication sharedApplication].statusBarFrame.size.height - bgBtnStart.size.height + 10, bgBtnStart.size.width, bgBtnStart.size.height) andString:@"Start"];
         [self.btnStart setBackgroundImage:bgBtnStart forState:UIControlStateNormal];
         [self addSubview:self.btnStart];
     }
