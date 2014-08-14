@@ -13,8 +13,6 @@
 
 @interface KillDeathRatioView : UIView
 
--(id)initWithFrame:(CGRect)frame andIsTrackingScreen:(BOOL)isTrackingScreen andKills:(int)kills andDeaths:(int)deaths;
-
 @property (nonatomic, readwrite) BOOL isTrackingScreen;
 
 @property(nonatomic, readwrite) int kills;
@@ -27,8 +25,17 @@
 
 @property(strong, nonatomic) Polygon *polyKills;
 @property(strong, nonatomic) Polygon *polyDeaths;
+@property(strong, nonatomic) Polygon *polyRatio;
+
+@property(strong, nonatomic) CALayer *container;
+@property(strong, nonatomic) CAShapeLayer *lineRed;
+@property(strong, nonatomic) CAShapeLayer *lineWhite;
+@property(strong, nonatomic) UIBezierPath *bezierRed;
+@property(strong, nonatomic) UIBezierPath *bezierWhite;
 
 @property(nonatomic) CGPoint pointA;
 @property(nonatomic) CGPoint pointB;
+
+-(id)initWithFrame:(CGRect)frame andIsTrackingScreen:(BOOL)isTrackingScreen andKills:(int)kills andDeaths:(int)deaths;
 
 @end

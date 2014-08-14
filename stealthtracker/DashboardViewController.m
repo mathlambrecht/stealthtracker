@@ -71,7 +71,7 @@
     // Do any additional setup after loading the view.
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
     
-    CGRect bounds = [UIScreen mainScreen].bounds;
+    CGRect bounds = [[UIScreen mainScreen] bounds];
     self.view = [[DashboardView alloc] initWithFrame:bounds andKills:10 andDeaths:20];
     
     [self createDashboard];

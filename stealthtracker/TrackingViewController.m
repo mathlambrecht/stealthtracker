@@ -130,6 +130,7 @@
     [self.navigationController setNavigationBarHidden:YES];
     
     CGRect bounds = [UIScreen mainScreen].bounds;
+    
     self.view = [[TrackingView alloc] initWithFrame:bounds];
     
     self.arrDB = [[NSMutableArray alloc] init];

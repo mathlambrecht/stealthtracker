@@ -21,17 +21,16 @@
         // Initialization code
         if(_isTrackingScreen)
         {
-            //buttons
             [self createButtons];
         }
         else
         {
-            //polygons
             [self createPolys];
         }
+        
+        [self createRatio];
+        [self updateRatio];
     }
-    
-    [self createRatio];
     
     return self;
 }
@@ -72,7 +71,7 @@
     self.polyKills = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:_kills label:@"kills"];
     [self addSubview:self.polyKills];
     
-    self.polyDeaths = [[Polygon alloc] initWithFrame:CGRectMake(108, self.polyKills.frame.origin.y, image.size.width, image.size.height)  polygon:image value:_deaths label:@"deaths"];
+    self.polyDeaths = [[Polygon alloc] initWithFrame:CGRectMake(108, self.polyKills.frame.origin.y, image.size.width, image.size.height)  polygon:image value:_deaths label:@"ratio"];
     [self addSubview:self.polyDeaths];
     
     self.pointA = CGPointMake(image.size.width, image.size.height/2);
@@ -81,28 +80,34 @@
 
 -(void)createRatio
 {
-    CALayer *caLayer = [CALayer layer];
-    caLayer.position = CGPointMake(0, 0);
-    [self.layer addSublayer:caLayer];
+    self.container = [CALayer layer];
+    self.container.position = CGPointMake(0, 0);
+    [self.layer addSublayer:self.container];
     
-    //CGPoint pointRatio = CGPointMake(<#CGFloat x#>, <#CGFloat y#>)
+    self.lineRed = [CAShapeLayer layer];
+    self.bezierRed = [UIBezierPath bezierPath];
     
-    //CGPoint redA;
-    //CGPoint redB;
+    self.lineWhite = [CAShapeLayer layer];
+    self.bezierWhite = [UIBezierPath bezierPath];
     
-    CAShapeLayer *lineRed = [CAShapeLayer layer];
-    UIBezierPath *linePath = [UIBezierPath bezierPath];
-    [linePath moveToPoint:self.pointA];
-    [linePath addLineToPoint:self.pointB];
-    lineRed.path = linePath.CGPath;
-    lineRed.fillColor = nil;
-    lineRed.opacity = 1.0;
-    lineRed.lineWidth = 2;
-    lineRed.strokeColor = [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1].CGColor;
-    [caLayer addSublayer:lineRed];
+    [self.container addSublayer:self.lineRed];
     
-    //CGPoint whiteA;
-    //CGPoint whiteB;
+    UIImage *image = [UIImage imageNamed:@"polyRatio.png"];
+    self.polyRatio = [[Polygon alloc] initWithFrame:CGRectMake(50, self.pointA.y - image.size.height/2 - 3.5, image.size.width, image.size.height) polygon:image value:self.kills/self.deaths label:@""];
+    [self addSubview:self.polyRatio];
+}
+
+-(void)updateRatio
+{
+    float scale = (self.pointB.x - self.pointA.x)/100;
+    
+    [self.bezierWhite moveToPoint:self.pointA];
+    [self.bezierWhite addLineToPoint:self.pointB];
+    self.lineRed.path = self.bezierWhite.CGPath;
+    self.lineRed.fillColor = nil;
+    self.lineRed.opacity = 1.0;
+    self.lineRed.lineWidth = 2;
+    self.lineRed.strokeColor = [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1].CGColor;
 }
 
 /*

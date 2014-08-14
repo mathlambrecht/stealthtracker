@@ -41,14 +41,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "stealthtracker/KillDeathRatioView.m"
-            timestampString = "429725238.592461"
+            filePath = "stealthtracker/KillDeathRatioView.h"
+            timestampString = "429733857.494668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-createRatio"
-            landmarkType = "5">
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "deaths"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KillDeathRatioView deaths]"
+                  moduleName = "stealthtracker"
+                  urlString = "file:///Users/mathlambrecht/Documents/stealthtracker/stealthtracker/KillDeathRatioView.h"
+                  timestampString = "429735653.229539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KillDeathRatioView setDeaths:]"
+                  moduleName = "stealthtracker"
+                  urlString = "file:///Users/mathlambrecht/Documents/stealthtracker/stealthtracker/KillDeathRatioView.h"
+                  timestampString = "429735653.229699"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
