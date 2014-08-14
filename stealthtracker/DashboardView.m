@@ -26,6 +26,14 @@
     return self;
 }
 
+-(id)initWithFrame:(CGRect)frame andKills:(int)kills andDeaths:(int)deaths
+{
+    self.kills = kills;
+    self.deaths = deaths;
+    
+    return [self initWithFrame:frame];
+}
+
 -(void)createTopPolys
 {
     UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
@@ -52,12 +60,8 @@
 
 -(void)createBottomPolys
 {
-    UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
-    self.polyKills = [[Polygon alloc] initWithFrame:CGRectMake(10, 210, image.size.width, image.size.height) polygon:image value:0 label:@"kills"];
-    [self addSubview:self.polyKills];
-    
-    self.polyDeaths = [[Polygon alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - image.size.width/2 - 10, self.polyKills.frame.origin.y, image.size.width, image.size.height)  polygon:image value:0 label:@"deaths"];
-    [self addSubview:self.polyDeaths];
+    self.KillDeathRatioView = [[KillDeathRatioView alloc] initWithFrame:CGRectMake(20, 420, [UIScreen mainScreen].bounds.size.width, 100) andIsTrackingScreen:false andKills:self.kills andDeaths:self.deaths];
+    [self addSubview:self.KillDeathRatioView];
 }
 
 /*

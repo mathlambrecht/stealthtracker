@@ -74,20 +74,6 @@
 
 -(void)createKillDeath
 {
-    UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
-    self.btnKill = [[Button alloc] initWithFrame:CGRectMake(20, [UIScreen mainScreen].bounds.size.height - image.size.height - 40, image.size.width, image.size.height) andString:@"0"];
-    [self.btnKill setBackgroundImage:image forState:UIControlStateNormal];
-    [self addSubview:self.btnKill];
-    
-    self.lblKill = [[Label alloc] initWithFrame:CGRectMake(self.btnKill.frame.origin.x + self.btnKill.frame.size.width/2 - 50, self.btnKill.frame.origin.y + self.btnKill.frame.size.height + 5, 100, 30) andString:@"Kills"];
-    [self addSubview:self.lblKill];
-    
-    self.btnDeath = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - image.size.width - 20, [UIScreen mainScreen].bounds.size.height - image.size.height - 40, image.size.width, image.size.height) andString:@"0"];
-    [self.btnDeath setBackgroundImage:image forState:UIControlStateNormal];
-    [self addSubview:self.btnDeath];
-    
-    self.lblDeath = [[Label alloc] initWithFrame:CGRectMake(self.btnDeath.frame.origin.x + self.btnDeath.frame.size.width/2 - 50, self.btnDeath.frame.origin.y + self.btnDeath.frame.size.height + 5, 100, 30) andString:@"Deaths"];
-    [self addSubview:self.lblDeath];
 }
 
 -(void)showOptions:(BOOL)isPaused

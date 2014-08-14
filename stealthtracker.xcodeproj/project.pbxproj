@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		531167D9198AF47300A229FF /* AppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 531167D8198AF47300A229FF /* AppModel.m */; };
+		532802F7199CE735009FF6A1 /* KillDeathRatioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 532802F6199CE735009FF6A1 /* KillDeathRatioView.m */; };
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
 		5354EE1A199BDA3200DD3E34 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354EE19199BDA3200DD3E34 /* SummaryViewController.m */; };
@@ -62,6 +63,8 @@
 		0A421B7E88DF47D7A4308232 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		531167D7198AF47300A229FF /* AppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppModel.h; sourceTree = "<group>"; };
 		531167D8198AF47300A229FF /* AppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppModel.m; sourceTree = "<group>"; };
+		532802F5199CE735009FF6A1 /* KillDeathRatioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillDeathRatioView.h; sourceTree = "<group>"; };
+		532802F6199CE735009FF6A1 /* KillDeathRatioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillDeathRatioView.m; sourceTree = "<group>"; };
 		533531B0198ABF920044F5F0 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		533531B1198ABF920044F5F0 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		533531B3198ABFA80044F5F0 /* DashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardView.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				53B2975A1999133300E9DF6F /* DecibelHUD.m */,
 				53C9078E199AB51400B25885 /* LuxHUD.h */,
 				53C9078F199AB51400B25885 /* LuxHUD.m */,
+				532802F5199CE735009FF6A1 /* KillDeathRatioView.h */,
+				532802F6199CE735009FF6A1 /* KillDeathRatioView.m */,
 			);
 			name = HUD;
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */,
 				536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */,
 				5354EE1D199BDA4700DD3E34 /* SummaryView.m in Sources */,
+				532802F7199CE735009FF6A1 /* KillDeathRatioView.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,
 				53F38AAE198A8A88002BAA3F /* main.m in Sources */,
 				53F9CF3719951B48009DBB75 /* SkirmDO.m in Sources */,

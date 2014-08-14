@@ -29,8 +29,8 @@
         [self.view.btnResume addTarget:self action:@selector(btnResumeClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.view.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        //[self.view.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        //[self.view.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return self;

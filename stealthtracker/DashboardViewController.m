@@ -53,10 +53,6 @@
             losses += 1;
         }
     }
-    
-    self.view.polyTotalSkirms.lblValue.text = [NSString stringWithFormat:@"%i", wins + losses];
-    self.view.polyLosses.lblValue.text = [NSString stringWithFormat:@"%i", losses];
-    self.view.polyWins.lblValue.text = [NSString stringWithFormat:@"%i", wins];
 }
 
 -(void)btnMenuClicked:(id)sender
@@ -76,7 +72,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
     
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.view = [[DashboardView alloc] initWithFrame:bounds];
+    self.view = [[DashboardView alloc] initWithFrame:bounds andKills:10 andDeaths:20];
     
     [self createDashboard];
 }

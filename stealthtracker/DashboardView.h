@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Polygon.h"
+#import "KillDeathRatioView.h"
 #import "DecibelHUD.h"
 #import "LuxHUD.h"
 
@@ -17,10 +18,14 @@
 @property(strong, nonatomic)Polygon *polyWins;
 @property(strong, nonatomic)Polygon *polyLosses;
 
+@property(strong, nonatomic)KillDeathRatioView *KillDeathRatioView;
+
+@property(nonatomic) int kills;
+@property(nonatomic) int deaths;
+
 @property(strong, nonatomic)DecibelHUD *decibelHUD;
 @property(strong, nonatomic)LuxHUD *luxHUD;
 
-@property(strong, nonatomic) Polygon *polyKills;
-@property(strong, nonatomic) Polygon *polyDeaths;
+-(id)initWithFrame:(CGRect)frame andKills:(int)kills andDeaths:(int)deaths;
 
 @end
