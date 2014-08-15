@@ -22,6 +22,10 @@
         // Custom initialization
         self.appModel = [AppModel getInstance];
         
+        NSLog(@"Time: %i", self.appModel.time);
+        NSLog(@"Kills: %i", self.appModel.kills);
+        NSLog(@"Deaths: %i", self.appModel.deaths);
+        
         if(!self.isListItem)
         {
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnDiscard.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnDiscardClickedHandler:)];
@@ -44,7 +48,18 @@
             self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"This is a date"];
         }
     }
+    
+    [self createSummary];
+    
     return self;
+}
+
+-(void)createSummary
+{
+    //time
+    //btnResult
+    //HUD
+    //KD Ratio
 }
 
 -(id)initWithIsListItem:(BOOL)isListItem

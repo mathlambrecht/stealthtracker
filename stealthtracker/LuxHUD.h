@@ -10,4 +10,7 @@
 
 @interface LuxHUD : UIView
 
+@property(nonatomic, readwrite) float lux;
+@property (nonatomic, strong) CALayer *container;
+
 @end

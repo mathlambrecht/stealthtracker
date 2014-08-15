@@ -18,7 +18,7 @@
 @property(strong, nonatomic)Polygon *polyWins;
 @property(strong, nonatomic)Polygon *polyLosses;
 
-@property(strong, nonatomic)KillDeathRatioView *KillDeathRatioView;
+@property(strong, nonatomic)KillDeathRatioView *killDeathRatioView;
 
 @property(nonatomic) int kills;
 @property(nonatomic) int deaths;

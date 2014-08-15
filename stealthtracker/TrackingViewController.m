@@ -23,14 +23,13 @@
         self.appModel = [AppModel getInstance];
         
         [self createDecibelMeter];
-        [self createLuxMeter];
         
         [self.view.btnPause addTarget:self action:@selector(btnPauseClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.btnResume addTarget:self action:@selector(btnResumeClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         
-        //[self.view.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
-        //[self.view.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.KillDeathRatioView.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.KillDeathRatioView.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return self;
@@ -68,8 +67,6 @@
     }];
 }
 
--(void)createLuxMeter{}
-
 // ---------------------------------------- TickHandler ----------------------------------------
 -(void)timerTickHandler
 {
@@ -77,6 +74,9 @@
     
     [self.appModel.arrDB addObject:[NSNumber numberWithFloat:[self.recorder averagePowerForChannel:0]]];
     self.view.decibelHUD.dB = [self.recorder averagePowerForChannel:0];
+    
+    [self.appModel.arrLux addObject:[NSNumber numberWithFloat:[UIScreen mainScreen].brightness]];
+    self.view.luxHud.lux = [UIScreen mainScreen].brightness;
     
     self.appModel.time += 1;
     self.view.seconds = self.appModel.time;

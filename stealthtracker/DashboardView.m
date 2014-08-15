@@ -56,12 +56,16 @@
     self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.decibelHUD];
     self.decibelHUD.dB = -25;
+    
+    self.luxHUD = [[LuxHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    self.luxHUD.lux = 0.5;
+    [self addSubview:self.luxHUD];
 }
 
 -(void)createBottomPolys
 {
-    self.KillDeathRatioView = [[KillDeathRatioView alloc] initWithFrame:CGRectMake(20, 420, [UIScreen mainScreen].bounds.size.width, 100) andIsTrackingScreen:false andKills:self.kills andDeaths:self.deaths];
-    [self addSubview:self.KillDeathRatioView];
+    self.killDeathRatioView = [[KillDeathRatioView alloc] initWithFrame:CGRectMake(20, 420, [UIScreen mainScreen].bounds.size.width, 100) andIsTrackingScreen:false andKills:self.kills andDeaths:self.deaths];
+    [self addSubview:self.killDeathRatioView];
 }
 
 /*

@@ -11,7 +11,7 @@
 #import "Polygon.h"
 #import "DecibelHUD.h"
 #import "LuxHUD.h"
-#import "Label.h"
+#import "KillDeathRatioView.h"
 
 @interface TrackingView : UIView
 
@@ -25,11 +25,7 @@
 @property(strong, nonatomic) DecibelHUD *decibelHUD;
 @property(strong, nonatomic) LuxHUD *luxHud;
 
-@property(strong, nonatomic) Button *btnKill;
-@property(strong, nonatomic) Button *btnDeath;
-
-@property(strong, nonatomic) Label *lblKill;
-@property(strong, nonatomic) Label *lblDeath;
+@property(strong, nonatomic)KillDeathRatioView *KillDeathRatioView;
 
 -(void)showOptions:(BOOL)isPaused;
 

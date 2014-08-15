@@ -47,14 +47,14 @@
 -(void)createButtons
 {
     UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
-    self.btnKill = [[Button alloc] initWithFrame:CGRectMake(20, [UIScreen mainScreen].bounds.size.height - image.size.height - 40, image.size.width, image.size.height) andString:@"0"];
+    self.btnKill = [[Button alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) andString:@"0"];
     [self.btnKill setBackgroundImage:image forState:UIControlStateNormal];
     [self addSubview:self.btnKill];
     
-    self.lblKill = [[Label alloc] initWithFrame:CGRectMake(self.btnKill.frame.origin.x + self.btnKill.frame.size.width/2 - 50, self.btnKill.frame.origin.y + self.btnKill.frame.size.height + 5, 100, 30) andString:@"Kills"];
+    self.lblKill = [[Label alloc] initWithFrame:CGRectMake(self.btnKill.frame.origin.x + self.btnKill.frame.size.width/2 - 50, self.btnKill.frame.origin.y + self.btnKill.frame.size.height, 100, 30) andString:@"Kills"];
     [self addSubview:self.lblKill];
     
-    self.btnDeath = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - image.size.width - 20, [UIScreen mainScreen].bounds.size.height - image.size.height - 40, image.size.width, image.size.height) andString:@"0"];
+    self.btnDeath = [[Button alloc] initWithFrame:CGRectMake(220, 0, image.size.width, image.size.height) andString:@"0"];
     [self.btnDeath setBackgroundImage:image forState:UIControlStateNormal];
     [self addSubview:self.btnDeath];
     
@@ -62,7 +62,7 @@
     [self addSubview:self.lblDeath];
     
     self.pointA = CGPointMake(image.size.width, image.size.height/2);
-    self.pointB = CGPointMake([UIScreen mainScreen].bounds.size.width - image.size.width * 2 - 20, self.pointA.y);
+    self.pointB = CGPointMake(220, self.pointA.y);
 }
 
 -(void)createPolys
@@ -71,7 +71,7 @@
     self.polyKills = [[Polygon alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height) polygon:image value:_kills label:@"kills"];
     [self addSubview:self.polyKills];
     
-    self.polyDeaths = [[Polygon alloc] initWithFrame:CGRectMake(108, self.polyKills.frame.origin.y, image.size.width, image.size.height)  polygon:image value:_deaths label:@"ratio"];
+    self.polyDeaths = [[Polygon alloc] initWithFrame:CGRectMake(108, self.polyKills.frame.origin.y, image.size.width, image.size.height)  polygon:image value:_deaths label:@"deaths"];
     [self addSubview:self.polyDeaths];
     
     self.pointA = CGPointMake(image.size.width, image.size.height/2);
@@ -93,13 +93,29 @@
     [self.container addSublayer:self.lineRed];
     
     UIImage *image = [UIImage imageNamed:@"polyRatio.png"];
-    self.polyRatio = [[Polygon alloc] initWithFrame:CGRectMake(50, self.pointA.y - image.size.height/2 - 3.5, image.size.width, image.size.height) polygon:image value:self.kills/self.deaths label:@""];
+    self.polyRatio = [[Polygon alloc] initWithFrame:CGRectMake(0, self.pointA.y - image.size.height/2 - 3.5, image.size.width, image.size.height) polygon:image value:self.kills/self.deaths label:@""];
     [self addSubview:self.polyRatio];
 }
 
 -(void)updateRatio
 {
-    float scale = (self.pointB.x - self.pointA.x)/100;
+    //float ratio = (float) _kills / (float) _deaths;
+    
+    float scale = ((float) self.pointB.x - (float) self.pointA.x);
+    float percent;
+    
+    if(_kills != 0 || _deaths != 0)
+    {
+        percent = (float) _kills * (100 / ((float) _kills + (float) _deaths));
+        
+    }
+    else
+    {
+        percent = 50;
+    }
+    
+    self.polyRatio.center =  CGPointMake(self.pointA.x  + ((percent/100) * scale) , self.pointA.y - 3.5);
+
     
     [self.bezierWhite moveToPoint:self.pointA];
     [self.bezierWhite addLineToPoint:self.pointB];

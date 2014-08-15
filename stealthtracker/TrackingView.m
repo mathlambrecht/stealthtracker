@@ -53,7 +53,6 @@
     self.btnEnd = [[Button alloc] initWithFrame:CGRectMake(self.btnResume.frame.origin.x + bgBtnResume.size.width + 10, self.btnResume.frame.origin.y, bgBtnEnd.size.width, bgBtnEnd.size.height) andString:@"End"];
     [self.btnEnd setBackgroundImage:bgBtnEnd forState:UIControlStateNormal];
     
-    
     [self showOptions:false];
     
     [self addSubview:self.btnPause];
@@ -64,16 +63,18 @@
 -(void)createHUD
 {
     //Decibel
-    self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.decibelHUD];
     
     //Lux
-    self.luxHud = [[LuxHUD alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    self.luxHud = [[LuxHUD alloc] initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.luxHud];
 }
 
 -(void)createKillDeath
 {
+    self.KillDeathRatioView = [[KillDeathRatioView alloc] initWithFrame:CGRectMake(20, 485, [UIScreen mainScreen].bounds.size.width, 100) andIsTrackingScreen:true andKills:0 andDeaths:0];
+    [self addSubview:self.KillDeathRatioView];
 }
 
 -(void)showOptions:(BOOL)isPaused
