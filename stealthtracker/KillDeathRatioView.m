@@ -97,10 +97,34 @@
     [self addSubview:self.polyRatio];
 }
 
+-(void)setKills:(int)kills
+{
+    if(_kills != kills)
+    {
+        _kills = kills;
+        
+        self.polyKills.lblValue.text = [NSString stringWithFormat:@"%i", _kills];
+        self.btnKill.value = _kills;
+        
+        [self updateRatio];
+    }
+}
+
+-(void)setDeaths:(int)deaths
+{
+    if(_deaths != deaths)
+    {
+        _deaths = deaths;
+        
+        self.polyDeaths.lblValue.text = [NSString stringWithFormat:@"%i", deaths];
+        self.btnDeath.value = _deaths;
+        
+        [self updateRatio];
+    }
+}
+
 -(void)updateRatio
 {
-    //float ratio = (float) _kills / (float) _deaths;
-    
     float scale = ((float) self.pointB.x - (float) self.pointA.x);
     float percent;
     
@@ -115,7 +139,6 @@
     }
     
     self.polyRatio.center =  CGPointMake(self.pointA.x  + ((percent/100) * scale) , self.pointA.y - 3.5);
-
     
     [self.bezierWhite moveToPoint:self.pointA];
     [self.bezierWhite addLineToPoint:self.pointB];
@@ -124,6 +147,25 @@
     self.lineRed.opacity = 1.0;
     self.lineRed.lineWidth = 2;
     self.lineRed.strokeColor = [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1].CGColor;
+
+    float ratio = roundf( ((float) _kills / (float) _deaths) * 100 ) / 100;
+    
+    if(_kills == 0 && _deaths == 0)
+    {
+        ratio = 0;
+    }
+    
+    if(ratio == INFINITY)
+    {
+        ratio = _kills;
+    }
+    
+    if(ratio == 0 && _deaths ==0)
+    {
+        ratio = _kills;
+    }
+    
+    self.polyRatio.lblValue.text = [NSString stringWithFormat:@"%.1f", ratio];
 }
 
 /*

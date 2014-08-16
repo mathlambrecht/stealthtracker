@@ -24,6 +24,8 @@
 		5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE831993994F00043984 /* NewTrackingViewController.m */; };
 		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
 		539761D8199418A40073A323 /* DatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 539761D7199418A40073A323 /* DatabaseService.m */; };
+		539DAB14199F9B9D008E44CA /* SkirmsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539DAB13199F9B9D008E44CA /* SkirmsViewController.m */; };
+		539DAB17199F9BA7008E44CA /* SkirmsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 539DAB16199F9BA7008E44CA /* SkirmsView.m */; };
 		53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B2975A1999133300E9DF6F /* DecibelHUD.m */; };
 		53B48D8C199AC0F100FA0102 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B48D8B199AC0F100FA0102 /* IOKit.framework */; };
 		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
@@ -93,6 +95,10 @@
 		5389CE861993995A00043984 /* NewTrackingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingView.m; sourceTree = "<group>"; };
 		539761D6199418A40073A323 /* DatabaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseService.h; sourceTree = "<group>"; };
 		539761D7199418A40073A323 /* DatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseService.m; sourceTree = "<group>"; };
+		539DAB12199F9B9D008E44CA /* SkirmsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkirmsViewController.h; sourceTree = "<group>"; };
+		539DAB13199F9B9D008E44CA /* SkirmsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkirmsViewController.m; sourceTree = "<group>"; };
+		539DAB15199F9BA7008E44CA /* SkirmsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkirmsView.h; sourceTree = "<group>"; };
+		539DAB16199F9BA7008E44CA /* SkirmsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkirmsView.m; sourceTree = "<group>"; };
 		53B297591999133300E9DF6F /* DecibelHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecibelHUD.h; sourceTree = "<group>"; };
 		53B2975A1999133300E9DF6F /* DecibelHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecibelHUD.m; sourceTree = "<group>"; };
 		53B48D8B199AC0F100FA0102 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -252,6 +258,17 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		539DAB11199F9B33008E44CA /* Skirms */ = {
+			isa = PBXGroup;
+			children = (
+				539DAB12199F9B9D008E44CA /* SkirmsViewController.h */,
+				539DAB13199F9B9D008E44CA /* SkirmsViewController.m */,
+				539DAB15199F9BA7008E44CA /* SkirmsView.h */,
+				539DAB16199F9BA7008E44CA /* SkirmsView.m */,
+			);
+			name = Skirms;
+			sourceTree = "<group>";
+		};
 		53BE8D721993B11D00DB1D26 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +382,7 @@
 		53F38AD1198A927C002BAA3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				539DAB11199F9B33008E44CA /* Skirms */,
 				5354EE17199BDA0000DD3E34 /* Summary */,
 				53BE8D721993B11D00DB1D26 /* Tracking */,
 				5389CE811993993700043984 /* Start Tracking */,
@@ -543,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539DAB14199F9B9D008E44CA /* SkirmsViewController.m in Sources */,
 				5367C68519954649007D9F99 /* Polygon.m in Sources */,
 				536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */,
 				533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */,
@@ -569,6 +588,7 @@
 				53F38AAE198A8A88002BAA3F /* main.m in Sources */,
 				53F9CF3719951B48009DBB75 /* SkirmDO.m in Sources */,
 				5354EE1A199BDA3200DD3E34 /* SummaryViewController.m in Sources */,
+				539DAB17199F9BA7008E44CA /* SkirmsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

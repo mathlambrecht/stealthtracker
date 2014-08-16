@@ -26,6 +26,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(isLoggedInChangedHandler:) name:@"IS_LOGGEDIN_CHANGED" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(skirmsLoadedHandler:) name:@"SKIRMS_LOADED" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(arrSkirmsChangedHandler:) name:@"ARRSKIRMS_CHANGED" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveSessionHandler:) name:@"SAVE_SESSION" object:nil];
         
         [self isLoggedInChangedHandler:nil];
     }
@@ -64,6 +65,12 @@
     self.dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
     [self pushViewController:self.dashboardViewController animated:YES];
 }
+
+-(void)saveSessionHandler:(id)sender
+{
+    [self.databaseService saveSession];
+}
+
 
 - (void)viewDidLoad
 {

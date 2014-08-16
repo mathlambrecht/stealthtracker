@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SkirmDO : NSObject
+@interface SkirmDO : NSObject<NSCoding>
 
 @property (nonatomic)int userId;
-@property (nonatomic)int result;
+@property (nonatomic) int time;
+@property (nonatomic, strong) NSMutableArray *arrDB;
+@property (nonatomic, strong) NSMutableArray *arrLux;
+@property (nonatomic) int kills;
+@property (nonatomic) int deaths;
+@property (nonatomic) int result;
 
 @end

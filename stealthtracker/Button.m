@@ -9,6 +9,7 @@
 #import "Button.h"
 
 @implementation Button
+@synthesize value = _value;
 
 - (id)initWithFrame:(CGRect)frame andString:(NSString *)string
 {
@@ -23,6 +24,16 @@
     }
     
     return self;
+}
+
+-(void)setValue:(int)value
+{
+    if(_value != value)
+    {
+        _value = value;
+        
+        [self setAttributedTitle:[HelperFactory createAttributedString:[NSString stringWithFormat:@"%i", value]] forState:UIControlStateNormal];
+    }
 }
 
 /*

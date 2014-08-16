@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "AppModel.h"
 #import "SummaryView.h"
 #import "HelperFactory.h"
@@ -14,9 +15,10 @@
 
 @interface SummaryViewController : UIViewController
 
-@property(strong, nonatomic)AppModel *appModel;
+@property(strong, nonatomic) AppModel *appModel;
 @property(strong, nonatomic) SummaryView *view;
 @property(nonatomic) BOOL isListItem;
+
 
 -(id)initWithIsListItem:(BOOL)isListItem;
 

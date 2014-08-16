@@ -32,11 +32,11 @@
     self.polyTimer.lblValue.text = @"";
     [self addSubview:self.polyTimer];
     
-    self.btnResult = [[Button alloc] initWithFrame:CGRectMake(self.polyTimer.frame.origin.x + self.polyTimer.frame.size.width + 20, 15, image.size.width, image.size.height) andString:@"win"];
+    self.btnResult = [[Button alloc] initWithFrame:CGRectMake(self.polyTimer.frame.origin.x + self.polyTimer.frame.size.width + 35, 30, image.size.width, image.size.height) andString:@"win"];
     [self.btnResult setImage:image forState:UIControlStateNormal];
     [self addSubview:self.btnResult];
     
-    self.lblResult = [[Label alloc] initWithFrame:CGRectMake(self.btnResult.center.x - self.lblResult.frame.size.width/2, self.btnResult.frame.origin.y + self.btnResult.frame.size.height + 5, 50, 25) andString:@"result"];
+    self.lblResult = [[Label alloc] initWithFrame:CGRectMake(self.btnResult.center.x - 50, self.btnResult.frame.origin.y + self.btnResult.frame.size.height + 3, 100, 25) andString:@"result"];
     [self addSubview:self.lblResult];
     
     self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];

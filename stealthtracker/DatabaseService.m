@@ -39,9 +39,11 @@
     }];
 }
 
--(void)saveNewSkirm
+-(void)saveSession
 {
     
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SESSION_SAVED" object:self];
 }
 
 @end

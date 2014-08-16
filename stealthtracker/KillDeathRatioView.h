@@ -37,5 +37,6 @@
 @property(nonatomic) CGPoint pointB;
 
 -(id)initWithFrame:(CGRect)frame andIsTrackingScreen:(BOOL)isTrackingScreen andKills:(int)kills andDeaths:(int)deaths;
+-(void)updateRatio;
 
 @end

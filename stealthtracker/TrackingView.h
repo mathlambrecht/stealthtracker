@@ -18,6 +18,7 @@
 @property(strong, nonatomic)Button *btnPause;
 @property(strong, nonatomic)Button *btnResume;
 @property(strong, nonatomic)Button *btnEnd;
+@property(strong, nonatomic)CALayer *lineCA;
 
 @property(nonatomic) int seconds;
 @property(strong, nonatomic) Polygon *polyTimer;
@@ -25,7 +26,7 @@
 @property(strong, nonatomic) DecibelHUD *decibelHUD;
 @property(strong, nonatomic) LuxHUD *luxHud;
 
-@property(strong, nonatomic)KillDeathRatioView *KillDeathRatioView;
+@property(strong, nonatomic)KillDeathRatioView *killDeathRatioView;
 
 -(void)showOptions:(BOOL)isPaused;
 

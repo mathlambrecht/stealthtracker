@@ -11,6 +11,8 @@
 
 @interface Button : UIButton
 
+@property(nonatomic) int value;
+
 -(id)initWithFrame:(CGRect)frame andString:(NSString *)string;
 
 @end

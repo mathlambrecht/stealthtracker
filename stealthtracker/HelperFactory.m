@@ -30,4 +30,14 @@
     return lbl;
 }
 
++(NSString *)saveSession
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    
+    return [documentDirectory stringByAppendingPathComponent:@"stealthtracker.archive"];
+}
+
+
+
 @end

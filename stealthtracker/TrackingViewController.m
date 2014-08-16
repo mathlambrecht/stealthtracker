@@ -28,8 +28,8 @@
         [self.view.btnResume addTarget:self action:@selector(btnResumeClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.view.KillDeathRatioView.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view.KillDeathRatioView.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.killDeathRatioView.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view.killDeathRatioView.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return self;
@@ -114,11 +114,17 @@
 -(void)btnKillCickedHandler:(id)sender
 {
     self.appModel.kills += 1;
+    self.view.killDeathRatioView.kills = self.appModel.kills;
+    
+    [self.view.killDeathRatioView updateRatio];
 }
 
 -(void)btnDeathClickedHandler:(id)sender
 {
     self.appModel.deaths += 1;
+    self.view.killDeathRatioView.deaths = self.appModel.deaths;
+    
+    [self.view.killDeathRatioView updateRatio];
 }
 
 - (void)viewDidLoad

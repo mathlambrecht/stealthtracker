@@ -22,10 +22,6 @@
         // Custom initialization
         self.appModel = [AppModel getInstance];
         
-        NSLog(@"Time: %i", self.appModel.time);
-        NSLog(@"Kills: %i", self.appModel.kills);
-        NSLog(@"Deaths: %i", self.appModel.deaths);
-        
         if(!self.isListItem)
         {
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnDiscard.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnDiscardClickedHandler:)];
@@ -47,9 +43,9 @@
             
             self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"This is a date"];
         }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionSaved:) name:@"SESSION_SAVED" object:nil];
     }
-    
-    [self createSummary];
     
     return self;
 }
@@ -57,9 +53,20 @@
 -(void)createSummary
 {
     //time
+    int seconds = self.appModel.time;
+    NSUInteger minutes  = seconds/60;
+    NSUInteger hours = minutes/60;
+    self.view.polyTimer.lblValue.text = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes%60, seconds%60];
+    
     //btnResult
+    
     //HUD
+    self.view.decibelHUD.dB = -40;
+    self.view.luxHUD.lux = 0.25;
+    
     //KD Ratio
+    self.view.kdRatio.kills = self.appModel.kills;
+    self.view.kdRatio.deaths = self.appModel.deaths;
 }
 
 -(id)initWithIsListItem:(BOOL)isListItem
@@ -71,23 +78,22 @@
 
 -(void)btnSaveClickedHandler:(id)sender
 {
-    [self returnToDashBoard];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SAVE_SESSION" object:self];
 }
 
 -(void)btnDiscardClickedHandler:(id)sender
 {
-    [self returnToDashBoard];
-}
-
--(void)returnToDashBoard
-{
-    DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:dashboardViewController animated:YES];
 }
 
 -(void)btnBackClickedHandler
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)sessionSaved:(id)sender
+{
+    DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:dashboardViewController animated:YES];
 }
 
 - (void)viewDidLoad
@@ -97,7 +103,8 @@
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[SummaryView alloc] initWithFrame:bounds];
-
+    
+    [self createSummary];
 }
 
 - (void)didReceiveMemoryWarning
