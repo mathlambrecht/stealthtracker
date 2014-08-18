@@ -11,12 +11,13 @@
 #import "DOFactory.h"
 #import "SkirmDO.h"
 #import "HelperFactory.h"
+#import "AppModel.h"
 
 @interface DatabaseService : NSObject
 
 @property(strong, nonatomic) __block NSMutableArray *arrSkirms;
 
 -(void)getSkirmsByUserId:(NSString *)userId;
--(void)saveSession;
+-(BOOL)saveSessions;
 
 @end

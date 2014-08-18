@@ -39,11 +39,15 @@
     }];
 }
 
--(void)saveSession
+-(BOOL)saveSessions
 {
+    self.arrSkirms = [[AppModel getInstance] arrSkirms];
+    SkirmDO *skirmDO = [DOFactory createLatestSkirm];
+    [self.arrSkirms addObject:skirmDO];
     
+    NSString *path = [HelperFactory getArchivePath];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SESSION_SAVED" object:self];
+    return [NSKeyedArchiver archiveRootObject:self.arrSkirms toFile:path];
 }
 
 @end

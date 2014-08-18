@@ -12,13 +12,14 @@
 #import "SummaryView.h"
 #import "HelperFactory.h"
 #import "DashboardViewController.h"
+#import "DatabaseService.h"
 
 @interface SummaryViewController : UIViewController
 
 @property(strong, nonatomic) AppModel *appModel;
 @property(strong, nonatomic) SummaryView *view;
 @property(nonatomic) BOOL isListItem;
-
+@property(strong, nonatomic) DatabaseService *dbService;
 
 -(id)initWithIsListItem:(BOOL)isListItem;
 

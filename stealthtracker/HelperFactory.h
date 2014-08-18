@@ -12,5 +12,6 @@
 
 +(NSMutableAttributedString *)createAttributedString:(NSString *)string;
 +(UILabel *)createNavbarTitle:(NSString *)string;
++(NSString *)getArchivePath;
 
 @end

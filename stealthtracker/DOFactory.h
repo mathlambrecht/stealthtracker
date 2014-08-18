@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SkirmDO.h"
+#import "AppModel.h"
 
 @interface DOFactory : NSObject
 
 +(SkirmDO *)createObjectFromDict:(NSDictionary *)dict;
++(SkirmDO *)createLatestSkirm;
 
 @end

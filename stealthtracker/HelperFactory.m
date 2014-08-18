@@ -30,7 +30,7 @@
     return lbl;
 }
 
-+(NSString *)saveSession
++(NSString *)getArchivePath
 {
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];

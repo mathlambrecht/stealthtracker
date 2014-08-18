@@ -10,7 +10,7 @@
 
 @interface SkirmDO : NSObject<NSCoding>
 
-@property (nonatomic)int userId;
+@property (nonatomic) int userId;
 @property (nonatomic) int time;
 @property (nonatomic, strong) NSMutableArray *arrDB;
 @property (nonatomic, strong) NSMutableArray *arrLux;

@@ -18,4 +18,20 @@
     return skirmDO;
 }
 
++(SkirmDO *)createLatestSkirm
+{
+    AppModel *appModel = [AppModel getInstance];
+    
+    SkirmDO *skirmDO = [SkirmDO alloc];
+    skirmDO.userId = [[appModel.dUser objectForKey:@"id"] intValue];
+    skirmDO.time = appModel.time;
+    skirmDO.arrDB = appModel.arrDB;
+    skirmDO.arrLux = appModel.arrLux;
+    skirmDO.kills = appModel.kills;
+    skirmDO.deaths = appModel.deaths;
+    skirmDO.result = appModel.result;
+    
+    return skirmDO;
+}
+
 @end

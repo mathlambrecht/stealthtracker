@@ -69,7 +69,7 @@
 }
 
 //arrSkirms
--(void)setArrSkirms:(NSArray *)arrSkirms
+-(void)setArrSkirms:(NSMutableArray *)arrSkirms
 {
     if(_arrSkirms != arrSkirms)
     {

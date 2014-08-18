@@ -10,15 +10,34 @@
 
 @implementation SkirmDO
 
+-(id)initWithCoder:(NSCoder*)coder
+{
+    self = [super init];
+    {
+        if(self)
+        {
+            self.userId = [[coder decodeObjectForKey:@"userId"] intValue];
+            self.time = [[coder decodeObjectForKey:@"time"] intValue];
+            self.arrDB = [coder decodeObjectForKey:@"arrDB"];
+            self.arrLux = [coder decodeObjectForKey:@"arrLux"];
+            self.kills = [[coder decodeObjectForKey:@"kills"] intValue];
+            self.deaths = [[coder decodeObjectForKey:@"deaths"] intValue];
+            self.result = [[coder decodeObjectForKey:@"result"] intValue];
+        }
+    }
+    
+    return self;
+}
+
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self forKey:@"userId"];
-    [aCoder encodeObject:self forKey:@"time"];
-    [aCoder encodeObject:self forKey:@"arrDB"];
-    [aCoder encodeObject:self forKey:@"arrLux"];
-    [aCoder encodeObject:self forKey:@"kills"];
-    [aCoder encodeObject:self forKey:@"deaths"];
-    [aCoder encodeObject:self forKey:@"result"];
+    [aCoder encodeInteger:self.userId forKey:@"userId"];
+    [aCoder encodeInteger:self.time forKey:@"time"];
+    [aCoder encodeObject:self.arrDB forKey:@"arrDB"];
+    [aCoder encodeObject:self.arrLux forKey:@"arrLux"];
+    [aCoder encodeInteger:self.kills forKey:@"kills"];
+    [aCoder encodeInteger:self.deaths forKey:@"deaths"];
+    [aCoder encodeInteger:self.result forKey:@"result"];
 }
 
 @end

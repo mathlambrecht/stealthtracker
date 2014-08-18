@@ -21,6 +21,7 @@
     {
         // Custom initialization
         self.appModel = [AppModel getInstance];
+        self.dbService = [[DatabaseService alloc] init];
         
         if(!self.isListItem)
         {
@@ -43,8 +44,6 @@
             
             self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"This is a date"];
         }
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionSaved:) name:@"SESSION_SAVED" object:nil];
     }
     
     return self;
@@ -78,7 +77,16 @@
 
 -(void)btnSaveClickedHandler:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"SAVE_SESSION" object:self];
+    if([self.dbService saveSessions])
+    {
+        NSLog(@"annelies is awesome");
+        DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:dashboardViewController animated:YES];
+    }
+    else
+    {
+        NSLog(@"nope");
+    }
 }
 
 -(void)btnDiscardClickedHandler:(id)sender

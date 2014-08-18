@@ -13,7 +13,7 @@
 
 @property (nonatomic, readwrite) BOOL isLoggedIn;
 @property (nonatomic, readwrite, strong) NSDictionary *dUser;
-@property (nonatomic, readwrite, strong) NSArray *arrSkirms;
+@property (nonatomic, readwrite, strong) NSMutableArray *arrSkirms;
 
 @property (nonatomic, readwrite) int time;
 @property (nonatomic, readwrite, strong) NSMutableArray *arrDB;
