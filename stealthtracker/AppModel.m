@@ -33,6 +33,9 @@
 {
     if(self = [super init])
     {
+        self.arrDB = [[NSMutableArray alloc] init];
+        self.arrLux = [[NSMutableArray alloc] init];
+        
         _isLoggedIn = false;
         
         _dUser = @{

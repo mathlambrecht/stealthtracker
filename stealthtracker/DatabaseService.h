@@ -18,6 +18,7 @@
 @property(strong, nonatomic) __block NSMutableArray *arrSkirms;
 
 -(void)getSkirmsByUserId:(NSString *)userId;
--(BOOL)saveSessions;
+-(BOOL)saveSkirms;
+-(void)getLocalSkirms;
 
 @end

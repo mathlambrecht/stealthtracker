@@ -57,6 +57,10 @@
     self.view.polyTotalSkirms.lblValue.text = [NSString stringWithFormat:@"%i", wins + losses];
     self.view.polyWins.lblValue.text = [NSString stringWithFormat:@"%i", wins];
     self.view.polyLosses.lblValue.text = [NSString stringWithFormat:@"%i", losses];
+    
+    //dB / Lux average HUD
+    [HelperFactory calculateAverageDb];
+    [HelperFactory calculateAverageLux];
 }
 
 -(void)btnMenuClicked:(id)sender{}

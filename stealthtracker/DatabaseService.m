@@ -39,7 +39,7 @@
     }];
 }
 
--(BOOL)saveSessions
+-(BOOL)saveSkirms
 {
     self.arrSkirms = [[AppModel getInstance] arrSkirms];
     SkirmDO *skirmDO = [DOFactory createLatestSkirm];
@@ -47,7 +47,17 @@
     
     NSString *path = [HelperFactory getArchivePath];
     
-    return [NSKeyedArchiver archiveRootObject:self.arrSkirms toFile:path];
+    BOOL success = [NSKeyedArchiver archiveRootObject:self.arrSkirms toFile:path];
+    
+    return success;
+}
+
+-(void)getLocalSkirms
+{
+    NSString *path = [HelperFactory getArchivePath];
+    self.arrSkirms = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SKIRMS_LOADED" object:self];
 }
 
 @end

@@ -33,6 +33,7 @@
 		53C90790199AB51400B25885 /* LuxHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C9078F199AB51400B25885 /* LuxHUD.m */; };
 		53E09300198BF67200D98618 /* Label.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E092FF198BF67200D98618 /* Label.m */; };
 		53E09303198BF9E900D98618 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E09302198BF9E900D98618 /* Button.m */; };
+		53EF422919A2240D0080BBA8 /* OverviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EF422819A2240D0080BBA8 /* OverviewCell.m */; };
 		53F38AA2198A8A88002BAA3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA1198A8A88002BAA3F /* Foundation.framework */; };
 		53F38AA4198A8A88002BAA3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */; };
 		53F38AA6198A8A88002BAA3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F38AA5198A8A88002BAA3F /* UIKit.framework */; };
@@ -112,6 +113,8 @@
 		53E092FF198BF67200D98618 /* Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.m; sourceTree = "<group>"; };
 		53E09301198BF9E900D98618 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		53E09302198BF9E900D98618 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		53EF422719A2240D0080BBA8 /* OverviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewCell.h; sourceTree = "<group>"; };
+		53EF422819A2240D0080BBA8 /* OverviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewCell.m; sourceTree = "<group>"; };
 		53F38A9E198A8A88002BAA3F /* stealthtracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stealthtracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F38AA1198A8A88002BAA3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		53F38AA3198A8A88002BAA3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -295,6 +298,15 @@
 			name = HUD;
 			sourceTree = "<group>";
 		};
+		53EF422619A223660080BBA8 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				53EF422719A2240D0080BBA8 /* OverviewCell.h */,
+				53EF422819A2240D0080BBA8 /* OverviewCell.m */,
+			);
+			name = Overview;
+			sourceTree = "<group>";
+		};
 		53F38A95198A8A88002BAA3F = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +419,7 @@
 		53F38AD6198A95C3002BAA3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				53EF422619A223660080BBA8 /* Overview */,
 				53F9CF3419951AD6009DBB75 /* Data Object */,
 				539761D5199417EC0073A323 /* Service */,
 				536D3AF2198BCE8C00FCEED0 /* Factory */,
@@ -576,6 +589,7 @@
 				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
 				539761D8199418A40073A323 /* DatabaseService.m in Sources */,
 				5389CE871993995A00043984 /* NewTrackingView.m in Sources */,
+				53EF422919A2240D0080BBA8 /* OverviewCell.m in Sources */,
 				5367C68919954C18007D9F99 /* ValueLabel.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,

@@ -12,7 +12,7 @@
 
 +(SkirmDO *)createObjectFromDict:(NSDictionary *)dict
 {
-    SkirmDO *skirmDO = [SkirmDO alloc];
+    SkirmDO *skirmDO = [[SkirmDO alloc] init];
     skirmDO.userId = [[dict objectForKey:@"user_id"] intValue];
     skirmDO.result = [[dict objectForKey:@"result"] intValue];
     return skirmDO;
@@ -22,7 +22,7 @@
 {
     AppModel *appModel = [AppModel getInstance];
     
-    SkirmDO *skirmDO = [SkirmDO alloc];
+    SkirmDO *skirmDO = [[SkirmDO alloc] init];
     skirmDO.userId = [[appModel.dUser objectForKey:@"id"] intValue];
     skirmDO.time = appModel.time;
     skirmDO.arrDB = appModel.arrDB;

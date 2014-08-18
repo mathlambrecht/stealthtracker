@@ -49,7 +49,7 @@
 //Fetch data
 -(void)getSkirms
 {
-    [self.databaseService getSkirmsByUserId:[self.appModel.dUser objectForKey:@"id"]];
+    [self.databaseService getLocalSkirms];
 }
 
 //Set Model data

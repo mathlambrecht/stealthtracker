@@ -77,15 +77,14 @@
 
 -(void)btnSaveClickedHandler:(id)sender
 {
-    if([self.dbService saveSessions])
+    if([self.dbService saveSkirms])
     {
-        NSLog(@"annelies is awesome");
         DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:dashboardViewController animated:YES];
     }
     else
     {
-        NSLog(@"nope");
+        NSLog(@"[SummaryViewController] Skirms could not be saved. Tap discard to continue");
     }
 }
 

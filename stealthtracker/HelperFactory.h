@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppModel.h"
 
 @interface HelperFactory : NSObject
 
 +(NSMutableAttributedString *)createAttributedString:(NSString *)string;
 +(UILabel *)createNavbarTitle:(NSString *)string;
 +(NSString *)getArchivePath;
++(float)calculateAverageDb;
++(float)calculateAverageLux;
 
 @end

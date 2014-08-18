@@ -32,12 +32,34 @@
 
 +(NSString *)getArchivePath
 {
-    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];
     
     return [documentDirectory stringByAppendingPathComponent:@"stealthtracker.archive"];
 }
 
++(float)calculateAverageDb
+{
+    float total = 0.0;
+    int count = 0;
+    
+    for(SkirmDO *skirmDO in [[AppModel getInstance] arrSkirms])
+    {
+        for(NSNumber *number in skirmDO.arrDB)
+        {
+            total = total + [number floatValue];
+        }
+        
+        count = count + [skirmDO.arrDB count];
+    }
+    
+    return total/count;
+}
 
++(float)calculateAverageLux
+{
+    float avg;
+    return avg;
+}
 
 @end
