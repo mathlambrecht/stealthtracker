@@ -1,5 +1,5 @@
 //
-//  SkirmDO.m
+//
 //  stealthtracker
 //
 //  Created by Mathias Lambrecht on 08/08/14.
@@ -16,13 +16,14 @@
     {
         if(self)
         {
-            self.userId = [[coder decodeObjectForKey:@"userId"] intValue];
-            self.time = [[coder decodeObjectForKey:@"time"] intValue];
+            self.userId = [coder decodeIntegerForKey:@"userId"];
+            self.time = [coder decodeIntegerForKey:@"time"];
             self.arrDB = [coder decodeObjectForKey:@"arrDB"];
             self.arrLux = [coder decodeObjectForKey:@"arrLux"];
-            self.kills = [[coder decodeObjectForKey:@"kills"] intValue];
-            self.deaths = [[coder decodeObjectForKey:@"deaths"] intValue];
-            self.result = [[coder decodeObjectForKey:@"result"] intValue];
+            self.kills = [coder decodeIntegerForKey:@"kills"];
+            self.deaths = [coder decodeIntegerForKey:@"deaths"];
+            self.result = [coder decodeIntegerForKey:@"result"];
+            self.date = [coder decodeObjectForKey:@"date"];
         }
     }
     
@@ -38,6 +39,7 @@
     [aCoder encodeInteger:self.kills forKey:@"kills"];
     [aCoder encodeInteger:self.deaths forKey:@"deaths"];
     [aCoder encodeInteger:self.result forKey:@"result"];
+    [aCoder encodeObject:self.date forKey:@"date"];
 }
 
 @end

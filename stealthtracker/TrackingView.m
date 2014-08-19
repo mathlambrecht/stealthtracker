@@ -41,7 +41,7 @@
     UIImage *bgBtnPause = [UIImage imageNamed:@"btnPause.png"];
     self.btnPause = [[Button alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - bgBtnPause.size.width/2, 20, bgBtnPause.size.width, bgBtnPause.size.height) andString:@""];
     [self.btnPause setBackgroundImage:bgBtnPause forState:UIControlStateNormal];
-    self.btnPause.alpha = 0.25;
+    self.btnPause.alpha = 0.2;
     
     //Resume
     UIImage *bgBtnResume = [UIImage imageNamed:@"btnContinue.png"];
@@ -121,7 +121,7 @@
         //show pause button
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^
          {
-             self.btnPause.alpha = 0.5;
+             self.btnPause.alpha = 0.3;
              self.btnResume.alpha = 0;
              self.btnEnd.alpha = 0;
             self.lineCA.opacity = 0;

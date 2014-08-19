@@ -16,13 +16,21 @@
 
 @interface SummaryView : UIView
 
+@property(nonatomic, readwrite)BOOL isListItem;
+
 @property(strong, nonatomic)Polygon *polyTimer;
+@property(strong, nonatomic)Polygon *polyResult;
 @property(strong, nonatomic)Button *btnResult;
 @property(strong, nonatomic)Label *lblResult;
 
 @property(strong, nonatomic)DecibelHUD *decibelHUD;
 @property(strong, nonatomic)LuxHUD *luxHUD;
 
+@property(strong, nonatomic)Polygon *polyAvgDB;
+@property(strong, nonatomic)Polygon *polyAvgLux;
+
 @property(strong, nonatomic)KillDeathRatioView *kdRatio;
+
+-(id)initWithFrame:(CGRect)frame andIsListItem:(BOOL)isListItem;
 
 @end

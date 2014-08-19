@@ -21,6 +21,7 @@
 @property (nonatomic, readwrite) int kills;
 @property (nonatomic, readwrite) int deaths;
 @property (nonatomic, readwrite) int result;
+@property (nonatomic, strong) NSDate *date;
 
 @property (nonatomic, readwrite) BOOL isTrackingFinished;
 

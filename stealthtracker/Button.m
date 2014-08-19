@@ -19,8 +19,8 @@
         // Initialization code
         self.tintColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
         self.titleLabel.font = [UIFont fontWithName:@"Arame-Thin" size:14];
-        [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
         [self setAttributedTitle:[HelperFactory createAttributedString:string] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
     }
     
     return self;
@@ -33,6 +33,7 @@
         _value = value;
         
         [self setAttributedTitle:[HelperFactory createAttributedString:[NSString stringWithFormat:@"%i", value]] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
     }
 }
 

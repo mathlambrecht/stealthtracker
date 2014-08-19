@@ -30,7 +30,7 @@
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnNewTracking.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnNewTrackingClicked:)];
         [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
         
-        self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logoNavBar.png"]];
+        self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"Dashboard"];
     }
     
     return self;
@@ -59,11 +59,15 @@
     self.view.polyLosses.lblValue.text = [NSString stringWithFormat:@"%i", losses];
     
     //dB / Lux average HUD
-    [HelperFactory calculateAverageDb];
-    [HelperFactory calculateAverageLux];
+    self.view.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageDb]];
+    self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f%k", [HelperFactory calculateAverageLux]];
 }
 
--(void)btnMenuClicked:(id)sender{}
+-(void)btnMenuClicked:(id)sender
+{
+    OverviewViewController *overviewViewController = [[OverviewViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:overviewViewController animated:YES];
+}
 
 -(void)btnNewTrackingClicked:(id)sender
 {
@@ -78,7 +82,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bgNavBar.png"] forBarMetrics:UIBarMetricsDefault];
     
     CGRect bounds = [[UIScreen mainScreen] bounds];
-    self.view = [[DashboardView alloc] initWithFrame:bounds andKills:20 andDeaths:0];
+    self.view = [[DashboardView alloc] initWithFrame:bounds andKills:[HelperFactory calculateTotalKills] andDeaths:[HelperFactory calculateTotalDeaths]];
     
     [self createDashboard];
 }

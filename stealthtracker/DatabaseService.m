@@ -10,6 +10,18 @@
 
 @implementation DatabaseService
 
+-(id)init
+{
+    self = [super init];
+    
+    if(self)
+    {
+        self.arrSkirms = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 -(void)getSkirmsByUserId:(NSString *)userId
 {
     NSString *path = [NSString stringWithFormat:@"http://student.howest.be/mathias.lambrecht/20132014/MAIV/index.php/skirms/%@", userId];
@@ -43,6 +55,7 @@
 {
     self.arrSkirms = [[AppModel getInstance] arrSkirms];
     SkirmDO *skirmDO = [DOFactory createLatestSkirm];
+    
     [self.arrSkirms addObject:skirmDO];
     
     NSString *path = [HelperFactory getArchivePath];
@@ -55,7 +68,13 @@
 -(void)getLocalSkirms
 {
     NSString *path = [HelperFactory getArchivePath];
+    
     self.arrSkirms = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    if(self.arrSkirms == NULL)
+    {
+        self.arrSkirms = [[NSMutableArray alloc] init];
+    }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SKIRMS_LOADED" object:self];
 }

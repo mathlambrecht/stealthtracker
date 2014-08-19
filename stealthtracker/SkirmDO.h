@@ -17,5 +17,6 @@
 @property (nonatomic) int kills;
 @property (nonatomic) int deaths;
 @property (nonatomic) int result;
+@property (nonatomic, strong) NSDate *date;
 
 @end

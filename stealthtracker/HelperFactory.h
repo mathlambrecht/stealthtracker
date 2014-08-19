@@ -16,5 +16,9 @@
 +(NSString *)getArchivePath;
 +(float)calculateAverageDb;
 +(float)calculateAverageLux;
++(int)calculateTotalKills;
++(int)calculateTotalDeaths;
++(float)calculateAverageDBBySkirm;
++(float)calculateAverageLuxBySkirm;
 
 @end

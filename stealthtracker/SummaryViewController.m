@@ -32,6 +32,8 @@
             [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
             
             self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"Summary"];
+            
+            [self.view.btnResult addTarget:self action:@selector(btnResultClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         }
         else
         {
@@ -60,8 +62,8 @@
     //btnResult
     
     //HUD
-    self.view.decibelHUD.dB = -40;
-    self.view.luxHUD.lux = 0.25;
+    self.view.decibelHUD.dB = [HelperFactory calculateAverageDBBySkirm];
+    self.view.luxHUD.lux = [HelperFactory calculateAverageLuxBySkirm];
     
     //KD Ratio
     self.view.kdRatio.kills = self.appModel.kills;
@@ -75,12 +77,16 @@
     return [self initWithNibName:nil bundle:nil];
 }
 
+-(void)btnResultClickedHandler:(id)sender
+{
+    NSLog(@"test");
+}
+
 -(void)btnSaveClickedHandler:(id)sender
 {
     if([self.dbService saveSkirms])
-    {
-        DashboardViewController *dashboardViewController = [[DashboardViewController alloc] initWithNibName:nil bundle:nil];
-        [self.navigationController pushViewController:dashboardViewController animated:YES];
+    {        
+        [self resetModel];
     }
     else
     {
@@ -90,6 +96,18 @@
 
 -(void)btnDiscardClickedHandler:(id)sender
 {
+    [self resetModel];
+}
+
+-(void)resetModel
+{
+    self.appModel.time = 0;
+    [self.appModel.arrDB removeAllObjects];
+    [self.appModel.arrLux removeAllObjects];
+    self.appModel.kills = 0;
+    self.appModel.deaths = 0;
+    
+    [self.dbService getLocalSkirms];
 }
 
 -(void)btnBackClickedHandler
@@ -109,7 +127,7 @@
     // Do any additional setup after loading the view.
     
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.view = [[SummaryView alloc] initWithFrame:bounds];
+    self.view = [[SummaryView alloc] initWithFrame:bounds andIsListItem:self.isListItem];
     
     [self createSummary];
 }

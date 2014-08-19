@@ -27,7 +27,7 @@
 }
 
 -(id)initWithFrame:(CGRect)frame andKills:(int)kills andDeaths:(int)deaths
-{
+{    
     self.kills = kills;
     self.deaths = deaths;
     
@@ -55,11 +55,18 @@
 {
     self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.decibelHUD];
-    self.decibelHUD.dB = -25;
+    self.decibelHUD.dB = [HelperFactory calculateAverageDb];
     
     self.luxHUD = [[LuxHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    self.luxHUD.lux = 0.5;
+    self.luxHUD.lux = [HelperFactory calculateAverageLux] / 1000;
     [self addSubview:self.luxHUD];
+    
+    UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
+    self.polyAvgDB = [[Polygon alloc] initWithFrame:CGRectMake(36, 115, image.size.width, image.size.height) polygon:image value:0 label:@"Avg. dB"];
+    [self addSubview:self.polyAvgDB];
+    
+    self.polyAvgLux = [[Polygon alloc] initWithFrame:CGRectMake(self.polyAvgDB.frame.origin.x + self.polyAvgDB.frame.size.width - 7, self.polyAvgDB.frame.origin.y, image.size.width, image.size.height) polygon:image value:0 label:@"Avg. Lux"];
+    [self addSubview:self.polyAvgLux];
 }
 
 -(void)createBottomPolys

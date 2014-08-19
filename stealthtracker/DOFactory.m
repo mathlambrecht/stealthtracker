@@ -30,6 +30,7 @@
     skirmDO.kills = appModel.kills;
     skirmDO.deaths = appModel.deaths;
     skirmDO.result = appModel.result;
+    skirmDO.date = [NSDate date];
     
     return skirmDO;
 }

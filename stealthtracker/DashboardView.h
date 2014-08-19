@@ -26,6 +26,9 @@
 @property(strong, nonatomic)DecibelHUD *decibelHUD;
 @property(strong, nonatomic)LuxHUD *luxHUD;
 
+@property(strong, nonatomic)Polygon *polyAvgDB;
+@property(strong, nonatomic)Polygon *polyAvgLux;
+
 -(id)initWithFrame:(CGRect)frame andKills:(int)kills andDeaths:(int)deaths;
 
 @end

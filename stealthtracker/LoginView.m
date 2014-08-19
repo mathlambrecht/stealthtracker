@@ -42,11 +42,10 @@
     
     UIImage *bgBtn = [UIImage imageNamed:@"formBtn.png"];
     
-    self.btnRegister = [[Button alloc] initWithFrame:CGRectMake(96, self.txtPassword.frame.origin.y + self.txtPassword.frame.size.height + 30, bgBtn.size.width, bgBtn.size.height) andString:@"Register"];
-    [self.btnRegister setBackgroundImage:bgBtn forState:UIControlStateNormal];
+    self.btnRegister = [[Button alloc] initWithFrame:CGRectMake(101, self.txtPassword.frame.origin.y + self.txtPassword.frame.size.height + 30, bgBtn.size.width, bgBtn.size.height) andString:@"Register"];
     [self addSubview:self.btnRegister];
 
-    self.btnLogin = [[Button alloc] initWithFrame:CGRectMake(self.btnRegister.frame.origin.x + self.btnRegister.frame.size.width + 15, self.btnRegister.frame.origin.y, bgBtn.size.width, bgBtn.size.height) andString:@"Login"];
+    self.btnLogin = [[Button alloc] initWithFrame:CGRectMake(self.btnRegister.frame.origin.x + self.btnRegister.frame.size.width + 10, self.btnRegister.frame.origin.y, bgBtn.size.width, bgBtn.size.height) andString:@"Login"];
     [self.btnLogin setBackgroundImage:bgBtn forState:UIControlStateNormal];
     [self addSubview:self.btnLogin];
 }
