@@ -38,12 +38,6 @@
         
         _isLoggedIn = false;
         
-        _dUser = @{
-                   @"id" : @"1",
-                   @"username": @"mathlambrecht",
-                   @"email": @"math.lambrecht@gmail.com"
-                   };
-        
         self.isTrackingFinished = false;
     }
     

@@ -17,8 +17,9 @@
 
 @property(strong, nonatomic) __block NSMutableArray *arrSkirms;
 
--(void)getSkirmsByUserId:(NSString *)userId;
+//-(void)getSkirmsByUserId:(NSString *)userId;
 -(BOOL)saveSkirms;
 -(void)getLocalSkirms;
+-(void)loginWithEmail:(NSString *)email andPassword:(NSString *)password;
 
 @end

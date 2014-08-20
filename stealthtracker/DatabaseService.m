@@ -9,6 +9,7 @@
 #import "DatabaseService.h"
 
 @implementation DatabaseService
+AppModel *appModel;
 
 -(id)init
 {
@@ -17,11 +18,41 @@
     if(self)
     {
         self.arrSkirms = [[NSMutableArray alloc] init];
+        appModel = [AppModel getInstance];
     }
     
     return self;
 }
 
+-(void)loginWithEmail:(NSString *)email andPassword:(NSString *)password
+{
+    NSString *path = @"http://student.howest.be/mathias.lambrecht/20132014/MAIV/login";
+    
+    NSDictionary *params = @{
+                             @"email": email,
+                             @"password": password
+                             };
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
+    {
+        NSLog(@"%@", operation.responseObject);
+        
+        appModel.dUser = @{
+                                @"id" : @"1",
+                                @"username": @"mathlambrecht",
+                                @"email": @"math.lambrecht@gmail.com"
+                                };
+        
+        appModel.isLoggedIn = true;
+    }
+    failure:^(AFHTTPRequestOperation *operation, NSError *error)
+    {
+        NSLog(@"Could not log in: %@", operation.error);
+    }];
+}
+
+/*
 -(void)getSkirmsByUserId:(NSString *)userId
 {
     NSString *path = [NSString stringWithFormat:@"http://student.howest.be/mathias.lambrecht/20132014/MAIV/index.php/skirms/%@", userId];
@@ -50,6 +81,7 @@
         NSLog(@"%@", error);
     }];
 }
+ */
 
 -(BOOL)saveSkirms
 {

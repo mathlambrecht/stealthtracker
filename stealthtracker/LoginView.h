@@ -21,4 +21,7 @@
 @property (nonatomic, strong) Button *btnRegister;
 @property (nonatomic, strong) Button *btnLogin;
 
+@property(nonatomic, strong) Label *lblWrongEmail;
+@property(nonatomic, strong) Label *lblWrongPassword;
+
 @end

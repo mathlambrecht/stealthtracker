@@ -35,7 +35,7 @@
         float y = r * sin( (180/pieces * i) * M_PI/180);
         
         CAShapeLayer *hudLayer  = [CAShapeLayer layer];
-        hudLayer.contents = (id) [UIImage imageNamed:@"hudDB"].CGImage;
+        hudLayer.contents = (id) [UIImage imageNamed:@"hudLux.png"].CGImage;
         hudLayer.frame = CGRectMake(x, y, 20, 15);
         hudLayer.transform = CATransform3DMakeRotation( (266 + 180/pieces * i) * M_PI/180, 0, 0, 1);
         hudLayer.opacity = 0.1;

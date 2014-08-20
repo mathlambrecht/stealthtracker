@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginView.h"
+#import "DatabaseService.h"
 #import "AppModel.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
 
 @property(strong, nonatomic) AppModel *appModel;
 @property(strong, nonatomic) LoginView *view;
+@property(strong, nonatomic) DatabaseService *dbService;
 
 @end
