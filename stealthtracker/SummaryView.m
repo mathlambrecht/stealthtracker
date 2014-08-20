@@ -43,6 +43,7 @@
     if(_isListItem)
     {
         self.polyResult = [[Polygon alloc] initWithFrame:CGRectMake(87, 15.5, image.size.width, image.size.height) polygon:image value:0 label:@"result"];
+        self.polyResult.lblValue.textColor = [UIColor colorWithRed:0.91 green:0.21 blue:0.2 alpha:1];
         [self addSubview:self.polyResult];
     }
     else

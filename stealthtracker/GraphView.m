@@ -7,6 +7,7 @@
 //
 
 #import "GraphView.h"
+#import "Label.h"
 
 @implementation GraphView
 
@@ -80,8 +81,6 @@ float height;
         {
             float value = fabsf([number floatValue]);
             
-            NSLog(@"%f", value);
-            
             value = value * self.container.frame.size.width;
             
             CAShapeLayer *line = [CAShapeLayer layer];
@@ -102,6 +101,24 @@ float height;
             pointB = CGPointMake(value, pointB.y + distance);
         }
     }
+    
+    //legend labels
+    Label *lbldB = [[Label alloc] initWithFrame:CGRectMake(self.container.frame.origin.x + 100, self.container.frame.origin.y + 5, 385, 30) andString:@"dB"];
+    lbldB.font = [UIFont systemFontOfSize:12];
+    lbldB.textColor = [UIColor colorWithRed:0.91 green:0.21 blue:0.2 alpha:1];
+    [lbldB setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
+    [self addSubview:lbldB];
+    
+    Label *lblLux = [[Label alloc] initWithFrame:CGRectMake(self.container.frame.origin.x + 100, self.container.frame.origin.y + 34.5, 385, 30) andString:@"/Lux"];
+    lblLux.font = [UIFont systemFontOfSize:12];
+    [lblLux setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
+    [self addSubview:lblLux];
+    
+    Label *lblTime = [[Label alloc] initWithFrame:CGRectMake(self.container.frame.origin.x - 4, self.container.frame.origin.y + 466, 50, 50) andString:@"t"];
+    lblTime.text = @"t";
+    lblTime.font = [UIFont systemFontOfSize:14];
+    [lblTime setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
+    [self addSubview:lblTime];
     
     return self;
 }

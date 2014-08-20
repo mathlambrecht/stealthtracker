@@ -21,6 +21,17 @@
     return attributedString;
 }
 
++(NSMutableAttributedString *)createAttributedHighlightString:(NSString *)string
+{
+    string = [string uppercaseString];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    [attributedString addAttribute:NSKernAttributeName value:@(2) range:NSMakeRange(0, [string length])];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:0.5] range:NSMakeRange(0, [string length])];
+    
+    return attributedString;
+}
+
 +(UILabel *)createNavbarTitle:(NSString *)string
 {
     UILabel *lbl = [UILabel new];

@@ -95,6 +95,9 @@
     UIImage *image = [UIImage imageNamed:@"polyRatio.png"];
     self.polyRatio = [[Polygon alloc] initWithFrame:CGRectMake(0, self.pointA.y - image.size.height/2 - 3.5, image.size.width, image.size.height) polygon:image value:self.kills/self.deaths label:@""];
     [self addSubview:self.polyRatio];
+    
+    self.lblRatio = [[Label alloc] initWithFrame:CGRectMake(self.polyRatio.center.x, self.polyRatio.center.y + self.polyRatio.frame.size.height, 100, 20) andString:@"k/d"];
+    [self addSubview:self.lblRatio];
 }
 
 -(void)setKills:(int)kills
@@ -141,6 +144,7 @@
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^
     {
         self.polyRatio.center =  CGPointMake(self.pointA.x  + ((percent/100) * scale) , self.pointA.y - 3.5);
+        self.lblRatio.center = CGPointMake(self.polyRatio.center.x + 2, self.polyRatio.center.y + 35);
     }
     completion:nil];
     
@@ -167,6 +171,11 @@
     if(ratio == 0 && _deaths ==0)
     {
         ratio = _kills;
+    }
+    
+    if(_kills == 0 && _deaths != 0)
+    {
+        ratio = -_deaths;
     }
     
     self.polyRatio.lblValue.text = [NSString stringWithFormat:@"%.1f", ratio];

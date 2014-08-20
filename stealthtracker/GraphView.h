@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppModel.h"
+#import "Label.h"
 
 @interface GraphView : UIView
 

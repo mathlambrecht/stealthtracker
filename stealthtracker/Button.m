@@ -20,7 +20,7 @@
         self.tintColor = [UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1];
         self.titleLabel.font = [UIFont fontWithName:@"Arame-Thin" size:14];
         [self setAttributedTitle:[HelperFactory createAttributedString:string] forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
+        [self setAttributedTitle:[HelperFactory createAttributedHighlightString:string] forState:UIControlStateHighlighted];
     }
     
     return self;
@@ -35,6 +35,17 @@
         [self setAttributedTitle:[HelperFactory createAttributedString:[NSString stringWithFormat:@"%i", value]] forState:UIControlStateNormal];
         [self setTitleColor:[UIColor colorWithRed:0.73 green:0.8 blue:0.82 alpha:1] forState:UIControlStateNormal];
     }
+}
+
+- (void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    
+    if (highlighted)
+    {
+        [self setTitleColor:[UIColor colorWithRed:0.38 green:0.45 blue:0.47 alpha:1] forState:UIControlStateHighlighted];
+    }
+    
 }
 
 /*

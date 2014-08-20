@@ -59,8 +59,16 @@
     self.view.polyLosses.lblValue.text = [NSString stringWithFormat:@"%i", losses];
     
     //dB / Lux average HUD
-    self.view.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageDb]];
-    self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageLux]];
+    if([self.appModel.arrSkirms count] > 0)
+    {
+        self.view.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageDb]];
+        self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageLux]];
+    }
+    else
+    {
+        self.view.polyAvgDB.lblValue.text = @"0";
+        self.view.polyAvgLux.lblValue.text = @"0";
+    }
 }
 
 -(void)btnMenuClicked:(id)sender

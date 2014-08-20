@@ -9,6 +9,8 @@
 #import "OverviewCellButton.h"
 
 @implementation OverviewCellButton
+Polygon *polyResult;
+Label *lblDate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,7 +20,8 @@
     {
         // Initialization code
         UIImage *bgResult = [UIImage imageNamed:@"polyCellResult.png"];
-        Polygon *polyResult = [[Polygon alloc] initWithFrame:CGRectMake(8, 5.5, bgResult.size.width, bgResult.size.height) polygon:bgResult value:0 label:@""];
+        polyResult = [[Polygon alloc] initWithFrame:CGRectMake(8, 5.5, bgResult.size.width, bgResult.size.height) polygon:bgResult value:0 label:@""];
+        polyResult.lblValue.textColor = [UIColor colorWithRed:0.91 green:0.21 blue:0.2 alpha:1];
         
         if(self.skirmDO.result == 1)
         {
@@ -34,7 +37,7 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         
-        Label *lblDate = [[Label alloc] initWithFrame:CGRectMake(80, 17, 120, 20) andString:[dateFormatter stringFromDate:self.skirmDO.date]];
+        lblDate = [[Label alloc] initWithFrame:CGRectMake(80, 17, 120, 20) andString:[dateFormatter stringFromDate:self.skirmDO.date]];
         [self addSubview:lblDate];
     }
     
@@ -51,6 +54,22 @@
     
     return [self initWithFrame:frame];
 }
+
+//-(void)setHighlighted:(BOOL)highlighted
+//{
+//    [super setHighlighted:highlighted];
+//    
+//    if (highlighted)
+//    {
+//        polyResult.alpha = 0.5;
+//        lblDate.alpha = 0.5;
+//    }
+//    else
+//    {
+//        polyResult.alpha = 1;
+//        lblDate.alpha = 1;
+//    }
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

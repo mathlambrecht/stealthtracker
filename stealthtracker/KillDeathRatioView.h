@@ -26,6 +26,7 @@
 @property(strong, nonatomic) Polygon *polyKills;
 @property(strong, nonatomic) Polygon *polyDeaths;
 @property(strong, nonatomic) Polygon *polyRatio;
+@property(strong, nonatomic) Label *lblRatio;
 
 @property(strong, nonatomic) CALayer *container;
 @property(strong, nonatomic) CAShapeLayer *lineRed;
