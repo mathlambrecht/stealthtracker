@@ -130,6 +130,8 @@
             self.decibelHUD.alpha = 0.2;
             self.luxHud.alpha = 0.2;
             self.killDeathRatioView.alpha = 0.2;
+            self.polyAvgDB.alpha = 0.2;
+            self.polyAvgLux.alpha = 0.2;
         }
         completion:nil];
     }
@@ -147,6 +149,8 @@
              self.decibelHUD.alpha = 1;
              self.luxHud.alpha = 1;
              self.killDeathRatioView.alpha = 1;
+             self.polyAvgDB.alpha = 1;
+             self.polyAvgLux.alpha = 1;
          }
         completion:nil];
     }

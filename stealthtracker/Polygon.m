@@ -15,6 +15,11 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        if(integer == NAN)
+        {
+            integer = 0;
+        }
+        
         // Initialization code
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         imageView.frame = frame;

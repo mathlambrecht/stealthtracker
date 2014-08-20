@@ -126,14 +126,6 @@
 
 -(void)resetModel
 {
-    self.appModel.time = 0;
-    [self.appModel.arrDB removeAllObjects];
-    [self.appModel.arrLux removeAllObjects];
-    self.appModel.kills = 0;
-    self.appModel.deaths = 0;
-    self.appModel.result = 0;
-    self.appModel.date = [NSDate date];
-    
     [self.dbService getLocalSkirms];
 }
 

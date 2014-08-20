@@ -36,7 +36,7 @@ AppModel *appModel;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject)
     {
-        NSLog(@"%@", operation.responseObject);
+        NSLog(@"Login Succesfull");
         
         appModel.dUser = @{
                                 @"id" : @"1",
@@ -51,37 +51,6 @@ AppModel *appModel;
         NSLog(@"Could not log in: %@", operation.error);
     }];
 }
-
-/*
--(void)getSkirmsByUserId:(NSString *)userId
-{
-    NSString *path = [NSString stringWithFormat:@"http://student.howest.be/mathias.lambrecht/20132014/MAIV/index.php/skirms/%@", userId];
-    NSURL *url = [NSURL URLWithString:path];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [operation start];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        self.arrSkirms = [[NSMutableArray alloc] init];
-        
-        for(NSDictionary *dict in operation.responseObject)
-        {
-            [self.arrSkirms addObject: [DOFactory createObjectFromDict:dict]];
-        }
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"SKIRMS_LOADED" object:self];
-    }
-     
-    failure:^(AFHTTPRequestOperation *operation, NSError *error)
-    {
-        NSLog(@"%@", error);
-    }];
-}
- */
 
 -(BOOL)saveSkirms
 {
@@ -99,8 +68,17 @@ AppModel *appModel;
 -(void)getLocalSkirms
 {
     NSString *path = [HelperFactory getArchivePath];
-    
     self.arrSkirms = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    
+    NSMutableArray *arrUserSkirms = [[NSMutableArray alloc] init];
+    for(SkirmDO *skirmDO in self.arrSkirms)
+    {
+        if(skirmDO.userId == [[appModel.dUser objectForKey:@"id"] intValue])
+        {
+            [arrUserSkirms addObject:skirmDO];
+        }
+    }
+    self.arrSkirms = arrUserSkirms;
     
     if(self.arrSkirms == NULL)
     {
