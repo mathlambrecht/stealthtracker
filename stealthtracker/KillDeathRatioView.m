@@ -138,7 +138,11 @@
         percent = 50;
     }
     
-    self.polyRatio.center =  CGPointMake(self.pointA.x  + ((percent/100) * scale) , self.pointA.y - 3.5);
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^
+    {
+        self.polyRatio.center =  CGPointMake(self.pointA.x  + ((percent/100) * scale) , self.pointA.y - 3.5);
+    }
+    completion:nil];
     
     [self.bezierWhite moveToPoint:self.pointA];
     [self.bezierWhite addLineToPoint:self.pointB];

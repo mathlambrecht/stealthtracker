@@ -13,6 +13,7 @@
 
 #import "DashboardViewController.h"
 #import "LoginViewController.h"
+#import "SummaryViewController.h"
 
 @interface NavigationController : UINavigationController
 

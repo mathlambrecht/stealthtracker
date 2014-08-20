@@ -60,7 +60,7 @@
     
     //dB / Lux average HUD
     self.view.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageDb]];
-    self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f%k", [HelperFactory calculateAverageLux]];
+    self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageLux]];
 }
 
 -(void)btnMenuClicked:(id)sender

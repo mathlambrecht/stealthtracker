@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SkirmDO.h"
 #import "OverviewCellButton.h"
-#import "AppModel.h"
+#import "SkirmDO.h"
 
-@interface OverviewView : UIView
+@interface OverviewView : UIScrollView
+
+@property(strong, nonatomic)NSMutableArray *arrListItems;
 
 @end

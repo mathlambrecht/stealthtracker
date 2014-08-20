@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "OverviewView.h"
 #import "HelperFactory.h"
+#import "OverviewCellButton.h"
+#import "AppModel.h"
+#import "SummaryViewController.h"
 
 @interface OverviewViewController : UIViewController
 
-@property(strong, nonatomic)OverviewView *view;
+@property(strong, nonatomic) AppModel *appModel;
+@property(strong, nonatomic) OverviewView *view;
+@property(strong, nonatomic) NSMutableArray *arrListItemButtons;
 
 @end

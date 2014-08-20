@@ -23,6 +23,10 @@
     AppModel *appModel = [AppModel getInstance];
     
     SkirmDO *skirmDO = [[SkirmDO alloc] init];
+    
+    skirmDO.arrDB = [[NSMutableArray alloc] init];
+    skirmDO.arrLux = [[NSMutableArray alloc] init];
+    
     skirmDO.userId = [[appModel.dUser objectForKey:@"id"] intValue];
     skirmDO.time = appModel.time;
     skirmDO.arrDB = appModel.arrDB;

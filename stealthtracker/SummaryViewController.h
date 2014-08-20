@@ -13,6 +13,7 @@
 #import "HelperFactory.h"
 #import "DashboardViewController.h"
 #import "DatabaseService.h"
+#import "GraphViewController.h"
 
 @interface SummaryViewController : UIViewController
 

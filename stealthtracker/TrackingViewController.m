@@ -26,10 +26,12 @@
         
         [self.view.btnPause addTarget:self action:@selector(btnPauseClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.btnResume addTarget:self action:@selector(btnResumeClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view.killDeathRatioView.btnKill addTarget:self action:@selector(btnKillCickedHandler:) forControlEvents:UIControlEventTouchUpInside];
         [self.view.killDeathRatioView.btnDeath addTarget:self action:@selector(btnDeathClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view.btnEnd addTarget:self action:@selector(btnEndClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(btnEndClickedHandler:) name:@"TRACKING_IS_ENDED" object:nil];
     }
     
     return self;
@@ -78,6 +80,9 @@
     [self.appModel.arrLux addObject:[NSNumber numberWithFloat:[UIScreen mainScreen].brightness]];
     self.view.luxHud.lux = [UIScreen mainScreen].brightness;
     
+    self.view.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%.f", [self.recorder averagePowerForChannel:0]];
+    self.view.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%.fk", [UIScreen mainScreen].brightness * 1000];
+    
     self.appModel.time += 1;
     self.view.seconds = self.appModel.time;
 }
@@ -105,8 +110,6 @@
 
 -(void)btnEndClickedHandler:(id)sender
 {
-    self.appModel.isTrackingFinished = true;
-    
     SummaryViewController *summaryViewController = [[SummaryViewController alloc] initWithIsListItem:false];
     [self.navigationController pushViewController:summaryViewController animated:YES];
 }

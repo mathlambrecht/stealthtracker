@@ -1,29 +1,25 @@
 //
-//  NewTrackingViewController.m
+//  GraphViewController.m
 //  stealthtracker
 //
-//  Created by Mathias Lambrecht on 07/08/14.
+//  Created by Mathias Lambrecht on 20/08/14.
 //  Copyright (c) 2014 Devine. All rights reserved.
 //
 
-#import "NewTrackingViewController.h"
+#import "GraphViewController.h"
 
-@interface NewTrackingViewController ()
+@interface GraphViewController ()
 
 @end
 
-@implementation NewTrackingViewController
+@implementation GraphViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
     if (self)
     {
         // Custom initialization
-        self.appModel = [AppModel getInstance];
-       
-        //Create navbar
         UIButton *btnBack = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 6, 19)];
         UIImage *btnBackImage = [UIImage imageNamed:@"btnBack.png"];
         [btnBack setBackgroundImage:btnBackImage  forState:UIControlStateNormal];
@@ -31,27 +27,9 @@
         UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] initWithCustomView:btnBack];
         self.navigationItem.leftBarButtonItem = btnBackItem;
         
-        self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"New Skirm"];
-        
-        //Add handlers
-        [self.view.btnStart addTarget:self action:@selector(btnStartClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"dB / Lux Graph"];
     }
-    
     return self;
-}
-
--(void)btnStartClickedHandler:(id)sender
-{
-    self.appModel.time = 0;
-    [self.appModel.arrDB removeAllObjects];
-    [self.appModel.arrLux removeAllObjects];
-    self.appModel.kills = 0;
-    self.appModel.deaths = 0;
-    self.appModel.result = 0;
-    self.appModel.date = [NSDate date];
-    
-    TrackingViewController *trackingViewController = [[TrackingViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:trackingViewController animated:YES];
 }
 
 -(void)btnBackClickedHandler
@@ -63,15 +41,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     CGRect bounds = [UIScreen mainScreen].bounds;
-    self.view = [[NewTrackingView alloc] initWithFrame:bounds];
+    self.view = [[GraphView alloc] initWithFrame:bounds];
+    
+    objc_msgSend([UIDevice currentDevice], @selector(setOrientation:), UIInterfaceOrientationLandscapeLeft);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)shouldAutorotate
+{
+    return YES;
 }
 
 /*

@@ -12,7 +12,6 @@
 		533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B1198ABF920044F5F0 /* DashboardViewController.m */; };
 		533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 533531B4198ABFA80044F5F0 /* DashboardView.m */; };
 		5350D26319A37B7A00617827 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5350D26219A37B7A00617827 /* OverviewViewController.m */; };
-		5350D26919A3872900617827 /* OverviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5350D26819A3872900617827 /* OverviewView.m */; };
 		5350D26C19A388F900617827 /* OverviewCellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5350D26B19A388F900617827 /* OverviewCellButton.m */; };
 		5354EE1A199BDA3200DD3E34 /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354EE19199BDA3200DD3E34 /* SummaryViewController.m */; };
 		5354EE1D199BDA4700DD3E34 /* SummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5354EE1C199BDA4700DD3E34 /* SummaryView.m */; };
@@ -24,11 +23,14 @@
 		536D3AF0198BC98300FCEED0 /* RODUScut300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 536D3AEE198BC98300FCEED0 /* RODUScut300.otf */; };
 		536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AF4198BCEA100FCEED0 /* HelperFactory.m */; };
 		536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 536D3AF8198BDA3D00FCEED0 /* InputTextField.m */; };
+		5383993219A4AEFB00506C45 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5383993119A4AEFB00506C45 /* GraphViewController.m */; };
+		5383993619A4AF4E00506C45 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5383993519A4AF4E00506C45 /* GraphView.m */; };
 		5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE831993994F00043984 /* NewTrackingViewController.m */; };
 		5389CE871993995A00043984 /* NewTrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5389CE861993995A00043984 /* NewTrackingView.m */; };
 		539761D8199418A40073A323 /* DatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 539761D7199418A40073A323 /* DatabaseService.m */; };
 		53B2975B1999133300E9DF6F /* DecibelHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53B2975A1999133300E9DF6F /* DecibelHUD.m */; };
 		53B48D8C199AC0F100FA0102 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B48D8B199AC0F100FA0102 /* IOKit.framework */; };
+		53BC88B019A3EF7A004C459F /* OverviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BC88AF19A3EF7A004C459F /* OverviewView.m */; };
 		53BE8D751993B1AD00DB1D26 /* TrackingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */; };
 		53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8D771993B1B800DB1D26 /* TrackingView.m */; };
 		53C90790199AB51400B25885 /* LuxHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C9078F199AB51400B25885 /* LuxHUD.m */; };
@@ -74,8 +76,6 @@
 		533531B4198ABFA80044F5F0 /* DashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardView.m; sourceTree = "<group>"; };
 		5350D26119A37B7A00617827 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
 		5350D26219A37B7A00617827 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
-		5350D26719A3872900617827 /* OverviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewView.h; sourceTree = "<group>"; };
-		5350D26819A3872900617827 /* OverviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewView.m; sourceTree = "<group>"; };
 		5350D26A19A388F900617827 /* OverviewCellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewCellButton.h; sourceTree = "<group>"; };
 		5350D26B19A388F900617827 /* OverviewCellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewCellButton.m; sourceTree = "<group>"; };
 		5354EE18199BDA3200DD3E34 /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
@@ -96,6 +96,10 @@
 		536D3AF4198BCEA100FCEED0 /* HelperFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperFactory.m; sourceTree = "<group>"; };
 		536D3AF7198BDA3D00FCEED0 /* InputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTextField.h; sourceTree = "<group>"; };
 		536D3AF8198BDA3D00FCEED0 /* InputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTextField.m; sourceTree = "<group>"; };
+		5383993019A4AEFB00506C45 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		5383993119A4AEFB00506C45 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		5383993419A4AF4E00506C45 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		5383993519A4AF4E00506C45 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		5389CE821993994F00043984 /* NewTrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackingViewController.h; sourceTree = "<group>"; };
 		5389CE831993994F00043984 /* NewTrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTrackingViewController.m; sourceTree = "<group>"; };
 		5389CE851993995A00043984 /* NewTrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTrackingView.h; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		53B297591999133300E9DF6F /* DecibelHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecibelHUD.h; sourceTree = "<group>"; };
 		53B2975A1999133300E9DF6F /* DecibelHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecibelHUD.m; sourceTree = "<group>"; };
 		53B48D8B199AC0F100FA0102 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		53BC88AE19A3EF7A004C459F /* OverviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewView.h; sourceTree = "<group>"; };
+		53BC88AF19A3EF7A004C459F /* OverviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewView.m; sourceTree = "<group>"; };
 		53BE8D731993B1AD00DB1D26 /* TrackingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingViewController.h; sourceTree = "<group>"; };
 		53BE8D741993B1AD00DB1D26 /* TrackingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackingViewController.m; sourceTree = "<group>"; };
 		53BE8D761993B1B800DB1D26 /* TrackingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackingView.h; sourceTree = "<group>"; };
@@ -182,8 +188,8 @@
 			children = (
 				5350D26119A37B7A00617827 /* OverviewViewController.h */,
 				5350D26219A37B7A00617827 /* OverviewViewController.m */,
-				5350D26719A3872900617827 /* OverviewView.h */,
-				5350D26819A3872900617827 /* OverviewView.m */,
+				53BC88AE19A3EF7A004C459F /* OverviewView.h */,
+				53BC88AF19A3EF7A004C459F /* OverviewView.m */,
 			);
 			name = Overview;
 			sourceTree = "<group>";
@@ -250,6 +256,17 @@
 				536D3AF8198BDA3D00FCEED0 /* InputTextField.m */,
 			);
 			name = Form;
+			sourceTree = "<group>";
+		};
+		5383993319A4AF0800506C45 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				5383993019A4AEFB00506C45 /* GraphViewController.h */,
+				5383993119A4AEFB00506C45 /* GraphViewController.m */,
+				5383993419A4AF4E00506C45 /* GraphView.h */,
+				5383993519A4AF4E00506C45 /* GraphView.m */,
+			);
+			name = Graph;
 			sourceTree = "<group>";
 		};
 		5389CE811993993700043984 /* Start Tracking */ = {
@@ -394,6 +411,7 @@
 		53F38AD1198A927C002BAA3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5383993319A4AF0800506C45 /* Graph */,
 				5350D25D19A37B3200617827 /* Overview */,
 				5354EE17199BDA0000DD3E34 /* Summary */,
 				53BE8D721993B11D00DB1D26 /* Tracking */,
@@ -575,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5367C68519954649007D9F99 /* Polygon.m in Sources */,
+				5383993619A4AF4E00506C45 /* GraphView.m in Sources */,
 				536D3AF9198BDA3D00FCEED0 /* InputTextField.m in Sources */,
 				533531B2198ABF920044F5F0 /* DashboardViewController.m in Sources */,
 				5389CE841993994F00043984 /* NewTrackingViewController.m in Sources */,
@@ -588,8 +607,8 @@
 				53BE8D781993B1B800DB1D26 /* TrackingView.m in Sources */,
 				539761D8199418A40073A323 /* DatabaseService.m in Sources */,
 				5389CE871993995A00043984 /* NewTrackingView.m in Sources */,
-				5350D26919A3872900617827 /* OverviewView.m in Sources */,
 				5350D26C19A388F900617827 /* OverviewCellButton.m in Sources */,
+				53BC88B019A3EF7A004C459F /* OverviewView.m in Sources */,
 				5367C68919954C18007D9F99 /* ValueLabel.m in Sources */,
 				533531B5198ABFA80044F5F0 /* DashboardView.m in Sources */,
 				53F38AD5198A94EC002BAA3F /* NavigationController.m in Sources */,
@@ -597,6 +616,7 @@
 				53E09300198BF67200D98618 /* Label.m in Sources */,
 				536D3AE8198BB4B000FCEED0 /* LoginViewController.m in Sources */,
 				536D3AF5198BCEA100FCEED0 /* HelperFactory.m in Sources */,
+				5383993219A4AEFB00506C45 /* GraphViewController.m in Sources */,
 				5354EE1D199BDA4700DD3E34 /* SummaryView.m in Sources */,
 				532802F7199CE735009FF6A1 /* KillDeathRatioView.m in Sources */,
 				53F38AB2198A8A88002BAA3F /* AppDelegate.m in Sources */,

@@ -51,14 +51,24 @@
     
     //End
     UIImage *bgBtnEnd = [UIImage imageNamed:@"btnEnd.png"];
+    
+    /*
+    self.btnEnd = [[Polygon alloc] initWithFrame:CGRectMake(37, 17, bgBtnEnd.size.width, bgBtnEnd.size.height) polygon:bgBtnEnd value:nil label:@""];
+    self.btnEnd.lblValue.text = @"End";
+    self.btnEnd.alpha = 0;
+     */
+    
     self.btnEnd = [[Button alloc] initWithFrame:CGRectMake(self.btnResume.frame.origin.x + bgBtnResume.size.width + 10, self.btnResume.frame.origin.y, bgBtnEnd.size.width, bgBtnEnd.size.height) andString:@"End"];
     [self.btnEnd setBackgroundImage:bgBtnEnd forState:UIControlStateNormal];
     self.btnEnd.alpha = 0;
+    
+    self.btnEndOriginalPosition = self.btnEnd.center;
     
     //Line
     self.lineCA = [CALayer layer];
     [self.layer addSublayer:self.lineCA];
     CGPoint pointA = CGPointMake(self.btnEnd.frame.origin.x + self.btnEnd.frame.size.width, self.btnEnd.center.y);
+    //CGPoint pointA = CGPointMake(self.btnEnd.frame.origin.x + self.btnEnd.frame.size.width, self.btnEnd.center.y + bgBtnEnd.size.height/2);
     CGPoint pointB = CGPointMake([UIScreen mainScreen].bounds.size.width - 20, pointA.y);
     self.lineCA.opacity = 0;
     
@@ -89,6 +99,13 @@
     //Lux
     self.luxHud = [[LuxHUD alloc] initWithFrame:CGRectMake(0, 30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.luxHud];
+    
+    UIImage *image = [UIImage imageNamed:@"polyDefault.png"];
+    self.polyAvgDB = [[Polygon alloc] initWithFrame:CGRectMake(36, 145, image.size.width, image.size.height) polygon:image value:0 label:@"dB"];
+    [self addSubview:self.polyAvgDB];
+    
+    self.polyAvgLux = [[Polygon alloc] initWithFrame:CGRectMake(self.polyAvgDB.frame.origin.x + self.polyAvgDB.frame.size.width - 7, self.polyAvgDB.frame.origin.y, image.size.width, image.size.height) polygon:image value:0 label:@"Lux"];
+    [self addSubview:self.polyAvgLux];
 }
 
 -(void)createKillDeath
@@ -146,6 +163,36 @@
         
         self.polyTimer.lblValue.text = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes%60, _seconds%60];
     }
+}
+
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    self.touchStart = [[touches anyObject] locationInView:self];
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint point = [[touches anyObject] locationInView:self];
+    
+    if(point.x > self.btnEndOriginalPosition.x)
+    {
+        self.btnEnd.center = CGPointMake(point.x, self.btnEnd.center.y);
+    }
+    
+    if(point.x > 230)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TRACKING_IS_ENDED" object:self];
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^
+     {
+         self.btnEnd.center = self.btnEndOriginalPosition;
+     }
+    completion:nil];
 }
 
 /*

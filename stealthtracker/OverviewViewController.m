@@ -29,7 +29,11 @@
         UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] initWithCustomView:btnBack];
         self.navigationItem.leftBarButtonItem = btnBackItem;
         
+        self.appModel = [AppModel getInstance];
+        
         self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"Skirms"];
+        
+        self.arrListItemButtons = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -46,6 +50,42 @@
     
     CGRect bounds = [UIScreen mainScreen].bounds;
     self.view = [[OverviewView alloc] initWithFrame:bounds];
+    
+    float sizeOfContent = 0;
+    UIView *lLast = [self.view.subviews lastObject];
+    NSInteger wd = lLast.frame.origin.y;
+    NSInteger ht = lLast.frame.size.height + 20;
+    sizeOfContent = wd+ht;
+    self.view.contentSize = CGSizeMake(self.view.frame.size.width, sizeOfContent);
+    
+    int i = 0;
+    for(OverviewCellButton *listItem in self.view.arrListItems)
+    {
+        [listItem addTarget:self action:@selector(listItemClickedHandler:) forControlEvents:UIControlEventTouchUpInside];
+        [listItem setTag:i];
+        
+        i = i + 1;
+    }
+}
+
+-(void)listItemClickedHandler:(OverviewCellButton *)sender
+{
+    SkirmDO *skirmDO = [[SkirmDO alloc] init];
+    skirmDO.arrDB = [[NSMutableArray alloc] init];
+    skirmDO.arrLux = [[NSMutableArray alloc] init];
+    
+    skirmDO = [self.appModel.arrSkirms objectAtIndex:sender.tag];
+    
+    self.appModel.time = skirmDO.time;
+    self.appModel.arrDB = skirmDO.arrDB;
+    self.appModel.arrLux = skirmDO.arrLux;
+    self.appModel.kills = skirmDO.kills;
+    self.appModel.deaths = skirmDO.deaths;
+    self.appModel.result = skirmDO.result;
+    self.appModel.date = skirmDO.date;
+    
+    SummaryViewController *summaryViewController = [[SummaryViewController alloc] initWithIsListItem:true];
+    [self.navigationController pushViewController:summaryViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,7 +93,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 

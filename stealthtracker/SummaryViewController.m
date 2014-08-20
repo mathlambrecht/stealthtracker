@@ -21,6 +21,7 @@
     {
         // Custom initialization
         self.appModel = [AppModel getInstance];
+        
         self.dbService = [[DatabaseService alloc] init];
         
         if(!self.isListItem)
@@ -44,7 +45,13 @@
             UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] initWithCustomView:btnBack];
             self.navigationItem.leftBarButtonItem = btnBackItem;
             
-            self.navigationItem.titleView = [HelperFactory createNavbarTitle:@"This is a date"];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            dateFormatter.dateFormat = @"dd/MM/yyyy";
+            
+            self.navigationItem.titleView = [HelperFactory createNavbarTitle:[dateFormatter stringFromDate:self.appModel.date]];
+            
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btnGraph.png"] style:UIBarButtonItemStylePlain target:self action:@selector(btnGraphClickedHandler:)];
+            [self.navigationItem.rightBarButtonItem setTintColor: [UIColor colorWithRed:0.83 green:0.19 blue:0.19 alpha:1]];
         }
     }
     
@@ -68,6 +75,18 @@
     //KD Ratio
     self.view.kdRatio.kills = self.appModel.kills;
     self.view.kdRatio.deaths = self.appModel.deaths;
+    
+    if(_isListItem)
+    {
+        if(self.appModel.result == 1)
+        {
+            self.view.polyResult.lblValue.text = @"win";
+        }
+        else if (self.appModel.result == 0)
+        {
+            self.view.polyResult.lblValue.text = @"loss";
+        }
+    }
 }
 
 -(id)initWithIsListItem:(BOOL)isListItem
@@ -99,6 +118,12 @@
     [self resetModel];
 }
 
+-(void)btnGraphClickedHandler:(id)sender
+{
+    GraphViewController *graphViewController = [[GraphViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:graphViewController animated:YES];
+}
+
 -(void)resetModel
 {
     self.appModel.time = 0;
@@ -106,6 +131,8 @@
     [self.appModel.arrLux removeAllObjects];
     self.appModel.kills = 0;
     self.appModel.deaths = 0;
+    self.appModel.result = 0;
+    self.appModel.date = [NSDate date];
     
     [self.dbService getLocalSkirms];
 }

@@ -17,6 +17,7 @@
 
 @property(strong, nonatomic)Button *btnPause;
 @property(strong, nonatomic)Button *btnResume;
+//@property(strong, nonatomic)Polygon *btnEnd;
 @property(strong, nonatomic)Button *btnEnd;
 @property(strong, nonatomic)CALayer *lineCA;
 
@@ -27,6 +28,12 @@
 @property(strong, nonatomic) LuxHUD *luxHud;
 
 @property(strong, nonatomic)KillDeathRatioView *killDeathRatioView;
+
+@property(nonatomic)CGPoint btnEndOriginalPosition;
+@property(nonatomic)CGPoint touchStart;
+
+@property(strong, nonatomic)Polygon *polyAvgDB;
+@property(strong, nonatomic)Polygon *polyAvgLux;
 
 -(void)showOptions:(BOOL)isPaused;
 

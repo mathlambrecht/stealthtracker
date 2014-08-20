@@ -55,7 +55,6 @@
 {
     self.arrSkirms = [[AppModel getInstance] arrSkirms];
     SkirmDO *skirmDO = [DOFactory createLatestSkirm];
-    
     [self.arrSkirms addObject:skirmDO];
     
     NSString *path = [HelperFactory getArchivePath];

@@ -18,6 +18,9 @@
     {
         // Initialization code
         self.backgroundColor = [UIColor colorWithRed:0.02 green:0.09 blue:0.12 alpha:1];
+        
+        self.arrListItems = [[NSMutableArray alloc] init];
+        
         [self createCells];
     }
     
@@ -36,16 +39,18 @@
         [self addSubview:cellButton];
         
         yPos = yPos + cellButton.frame.size.height + 20;
+        
+        [self.arrListItems addObject:cellButton];
     }
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 @end

@@ -42,7 +42,7 @@
     
     if(_isListItem)
     {
-        self.polyResult = [[Polygon alloc] initWithFrame:CGRectMake(self.polyTimer.frame.origin.x + self.polyTimer.frame.size.width + 35, 30, image.size.width, image.size.height) polygon:image value:nil label:@"result"];
+        self.polyResult = [[Polygon alloc] initWithFrame:CGRectMake(87, 15.5, image.size.width, image.size.height) polygon:image value:0 label:@"result"];
         [self addSubview:self.polyResult];
     }
     else
@@ -50,10 +50,10 @@
         self.btnResult = [[Button alloc] initWithFrame:CGRectMake(self.polyTimer.frame.origin.x + self.polyTimer.frame.size.width + 35, 30, image.size.width, image.size.height) andString:@"Win"];
         [self.btnResult setImage:image forState:UIControlStateNormal];
         [self addSubview:self.btnResult];
+        
+        self.lblResult = [[Label alloc] initWithFrame:CGRectMake(self.btnResult.center.x - 50, self.btnResult.frame.origin.y + self.btnResult.frame.size.height + 3, 100, 25) andString:@"Result"];
+        [self addSubview:self.lblResult];
     }
-    
-    self.lblResult = [[Label alloc] initWithFrame:CGRectMake(self.btnResult.center.x - 50, self.btnResult.frame.origin.y + self.btnResult.frame.size.height + 3, 100, 25) andString:@"Result"];
-    [self addSubview:self.lblResult];
     
     self.decibelHUD = [[DecibelHUD alloc] initWithFrame:CGRectMake(0, -30, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     [self addSubview:self.decibelHUD];
@@ -71,7 +71,7 @@
     [self addSubview:self.polyAvgLux];
     
     self.polyAvgDB.lblValue.text = [NSString stringWithFormat:@"%1.f", [HelperFactory calculateAverageDBBySkirm]];
-    self.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.f%k", [HelperFactory calculateAverageLuxBySkirm]];
+    self.polyAvgLux.lblValue.text = [NSString stringWithFormat:@"%1.fk", [HelperFactory calculateAverageLuxBySkirm] * 1000];
     
     self.kdRatio = [[KillDeathRatioView alloc] initWithFrame:CGRectMake(20, 420, [UIScreen mainScreen].bounds.size.width, 100) andIsTrackingScreen:false andKills:0 andDeaths:0];
     [self addSubview:self.kdRatio];

@@ -10,6 +10,19 @@
 
 @implementation SkirmDO
 
+-(id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.arrDB = [[NSMutableArray alloc] init];
+        self.arrLux = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 -(id)initWithCoder:(NSCoder*)coder
 {
     self = [super init];
